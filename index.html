@@ -61,7 +61,7 @@
   <!--/////////////////////////////////// NAV BAR /////////////////////////////////////////////////////////////////////////////-->
   <div id="navbar" class="navbar navbar-expand-lg navbar-light" style="background: #1161ee; height: 80px; font-weight: bold">
     <a href="#home-menu" id="">HOME</a>
-    <a href="#">SEE ALL SURVEYS</a>
+    <a href="#see-all-surveys-section">SEE ALL SURVEYS</a>
     <a href="#create-survey-section">CREATE SURVEY</a>
     <a href="#change-password-section">CHANGE PASSWORD</a>
     <a id=""><button class="btn btn-danger">SIGN OUT</button></a>
@@ -102,61 +102,40 @@
   </section>
 
   <!--///////////////////////////ANSWER SURVEY////////////////////////////////////////////-->
-  <!-- <section class="answer-surveys-section">
-    <div class="answerContainer">
-      <h1>Radio Buttons</h1>
-      <div class="wrap">
-        <input type="radio" id="true-option" name="true-or-false">
-        <label class="input-wrap true-wrap" for="true-option">
-          <label>TRUE</label>
-          <div class="check">
-            <svg x="0px" y="0px" viewBox="156 -206 512 512" enable-background="new 156 -206 512 512" xml:space="preserve">
-              <circle class="circle" fill="none" stroke="#000000" stroke-width="37" stroke-miterlimit="10" cx="412" cy="50"
-                r="226" />
-            </svg>
-            <div class="inner">
-              <svg version="1.1" x="0px" y="0px" viewBox="156 -206 512 512" enable-background="new 156 -206 512 512"
-                xml:space="preserve">
-                <polygon points="540,-78 380,82 284,-14 220,50 380,210 604,-14 " />
-              </svg>
-            </div>
-          </div>
-        </label>
+  <section class="see-all-surveys-section" id="see-all-surveys-section">
+    <div class="row">
+      <h3 style="margin-left: 20px"> Question </h3>
+      <div class="col jumbotron">
+        <p>The question of the survey (which I assume will look something like
+          the
+          folowing: {{log.question}}) is going to be here, so... there...</p>
       </div>
-      <div class="wrap right">
-        <input type="radio" id="false-option" name="true-or-false">
-        <label class="input-wrap false-wrap" for="false-option">
-          <label>FALSE</label>
-          <div class="check">
-            <svg x="0px" y="0px" viewBox="156 -206 512 512" enable-background="new 156 -206 512 512" xml:space="preserve">
-              <circle class="circle" fill="none" stroke="#000000" stroke-width="37" stroke-miterlimit="10" cx="412" cy="50"
-                r="226" />
-            </svg>
-            <div class="inner">
-              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                x="0px" y="0px" viewBox="115 -250 600 600" enable-background="new 115 -250 600 600" xml:space="preserve">
-                <path d="M286.5,238.3L412,112.8l125.5,125.5l62.8-62.8L474.8,50L600.3-75.5l-62.8-62.8L412-12.8L286.5-138.3l-62.8,62.8L349.3,50
-                     L223.8,175.5L286.5,238.3z" />
-              </svg>
-            </div>
-          </div>
-        </label>
-      </div>
-    </div>
-  </section> -->
 
-  <!--///////////////////////////CREATE SURVEY////////////////////////////////////////////-->
-  <section class="create-survey-section" id="create-survey-section" style="display: block">
-    <div class="create-survey-div jumbotron">
-      <div>
-        <h3>What Question will your survey ask?</h3>
+      <div class="col">
+        Answer either true or false for this question
+        <div class="row" style="margin-left: .1%">
+          <div class="col button-true-div">
+            <button class="btn btn-success"> TRUE </button>
+          </div>
+          <div class="col">
+            <button class="btn btn-danger"> FALSE </button>
+          </div>
+        </div>
       </div>
-      <form>
-        <textarea name="survey-question" cols="30" rows="10" class="notes"></textarea>
-        <button type="submit" class="btn btn-block btn-primary" style="width: 250px">SUBMIT SURVEY</button>
-      </form>
     </div>
-  </section>
+
+    <!--///////////////////////////CREATE SURVEY////////////////////////////////////////////-->
+    <section class="create-survey-section" id="create-survey-section" style="display: block">
+      <div class="create-survey-div jumbotron">
+        <div>
+          <h3>What Question will your survey ask?</h3>
+        </div>
+        <form>
+          <textarea name="survey[question]" cols="30" rows="10" class="notes"></textarea>
+          <button type="submit" class="btn btn-block btn-primary" style="width: 250px">SUBMIT SURVEY</button>
+        </form>
+      </div>
+    </section>
 
 
 </body>
