@@ -2,6 +2,24 @@
 
 const store = require('../store.js')
 
+
+window.onscroll = function () {
+  myFunction()
+};
+//////////////// FOR STICKY NAVIGATION PURPOSES ////////////////////
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+
+////////////////////////////////////////////////////////////////////
+
 const showOneSurveySuccess = (response) => {
 
 }
