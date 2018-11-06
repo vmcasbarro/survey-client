@@ -8,21 +8,19 @@
 
 .sign-in-div {
   float: left;
-  margin-top: -1px
+  margin-top: -1px;
+  height: 380px;
+
 }
 
 .div-with-change-password-form {
   margin-left: 25px;
 }
 
-.sign-in-div {
-  height: 380px
-}
-
 .sign-in-and-out {
   margin-top: 30px;
   display: inline-block;
-
+  height: 100vh;
 }
 
 .sign-up-log-in {
@@ -75,14 +73,23 @@
   padding-top: 60px;
 }
 
-////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////HOME SECTION////////////////////////////////////////////////////////
 .home-menu {
-  // display: inline-block;
-  // margin-left: 17px;
-  margin: 0 auto; // probably wont need these previous one only for 
-  height: 200vh;
-  display: none;
+  margin: 0 auto;
+  height: 100vh;
+  //  display: none;
 }
 
 
-///////////////////////////TESTING IT/////////////////////////////////////////////////////////
+///////////////////////////CHANGE PASSWORD SECTION/////////////////////////////////////////////////////////
+
+.change-password-section {
+  height: 100vh;
+
+}
+
+.change-password-div {
+  float: left;
+  margin: 10px auto 10px 15px;
+  height: 380px;
+}

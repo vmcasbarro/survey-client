@@ -17,6 +17,7 @@ function myFunction() {
     navbar.classList.remove("sticky");
   }
 }
+
 ////////////////////////////////////////////////////////////////////
 
 const showOneSurveySuccess = (response) => {
