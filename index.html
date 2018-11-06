@@ -1,17 +1,76 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Best Survey</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Browser Template</h1>
-    </body>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <!--///////////////////////////////////////SIGN UP / LOG IN FORM /////////////////////////////////////////////////////////////////////////-->
+  <section class="sign-up-log-in">
+    <div class="container-fluid sign-in-and-out">
+      <div class="makeInline1">
+        <div class="sign-up-div jumbotron">
+          <form id="sign-up-form">
+            <fieldset>
+              <legend> Sign up </legend>
+              <input placeholder="Enter your Email" class="form-control" style="width: 300px" name="credentials[email]"
+                type="email" />
+              <input placeholder="Enter your password" class="form-control" style="width: 300px" name="credentials[password]"
+                type="password" />
+              <input placeholder="Re-enter password" class="form-control" style="width: 300px" name="credentials[password_confirmation]"
+                type="password" />
+              <br />
+              <input type="submit" id="sign-up-button" class='theButton btn btn-primary' value="Sign Up" />
+            </fieldset>
+          </form>
+          <br />
+          <h3 id="display-sign-up-message">
+            <!--Status shall be displayed here-->
+          </h3>
+        </div>
+
+        <div class="sign-in-div jumbotron">
+          <form id="sign-in-form">
+            <fieldset>
+              <legend> Sign in </legend>
+              <input placeholder="Enter your Email" name="credentials[email]" class="form-control" style="width: 300px"
+                type="email" />
+              <input placeholder="Enter your password" name="credentials[password]" class="form-control" style="width: 300px"
+                type="password" />
+              <br />
+              <input type="submit" class='theButton btn btn-primary' value="Log In !" />
+            </fieldset>
+          </form>
+          <h3 id="display-log-in-message">
+            <!--Status shall be displayed here-->
+          </h3>
+        </div>
+        <br />
+      </div>
+    </div>
+  </section>
+  <!--////////////////////////////////////FIRST PAGE////////////////////////////////////////////////////////////////////////////-->
+  <section class="main-menu">
+    <div class="fancy jumbotron">
+      <h3 class=""> Know your audience </h3>
+
+    </div>
+  </section>
+
+  <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+
+
+
+</body>
+
 </html>
