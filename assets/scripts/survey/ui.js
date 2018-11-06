@@ -21,43 +21,45 @@ function myFunction() {
 ////////////////////////////////////////////////////////////////////
 
 const showOneSurveySuccess = (response) => {
-
+  $('.reset').trigger('reset')
 }
 
 const showOneSurveyFailure = () => {
-
+  $('.reset').trigger('reset')
 }
 
 const showAllSurveysSuccess = (response) => {
-
+  $('.reset').trigger('reset')
 }
 
 const showAllSurveysFailure = () => {
-
+  $('.reset').trigger('reset')
 }
 
 const newSurveySuccess = (data) => {
-  store.log = data.log
+  store.log = data.lo
+  $('.reset').trigger('reset')
 }
 
 const newSurveyFailure = () => {
-
+  $('.reset').trigger('reset')
 }
 
 const updateSurveySuccess = (data) => {
   store.log = data.log
+  $('.reset').trigger('reset')
 }
 
 const updateSurveyFailure = () => {
-
+  $('.reset').trigger('reset')
 }
 
 const destroySurveySuccess = () => {
-
+  $('.reset').trigger('reset')
 }
 
 const destroySurveyFailure = () => {
-
+  $('.reset').trigger('reset')
 }
 
 // const successAlert = () => {
