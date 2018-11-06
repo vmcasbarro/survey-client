@@ -94,205 +94,35 @@
   height: 380px;
 }
 
-/////////////////////////ANSWER SURVEY SECTION /////////////////////////////////////////////////////
-
-$btn-default: white;
-$btn-default-color: grey;
-$btn-hover: #152c32;
-$btn-true-checked: #0A5E44;
-$btn-false-checked:#4F1111;
-$true-color:#00ffc4;
-$false-color:#ff006a;
-
-
-* {
-  box-sizing: border-box;
+///////////////////////// ANSWER SURVEYS + SEE-ALL SURVEYS SECTION /////////////////////////////////////////////////////
+.see-all-surveys-section {
+  margin: 5%;
 }
 
 
-h1 {
-  color: black;
-  // text-align: center;
-  font-size: 1.3em;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .125em;
-  margin-bottom: 50px;
-  border-bottom: 1px solid grey;
-  padding-bottom: 25px;
-  font-family: sans-serif;
-}
-
-.container2 {
-  width: 500px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateY(-50%) translateX(-50%);
-}
-
-
-.label-name {
-  line-height: 2em;
-  vertical-align: center;
-}
-
-.input-wrap {
-  cursor: pointer;
-  width: 230px;
-  float: left;
-  padding: 25px;
-  padding-left: 12px;
-  font-family: sans-serif;
-  position: relative;
-  user-select: none;
-  background: $btn-default;
-
-  &:hover {
-    background: $btn-hover;
-  }
-
-  &:active {
-    background: $btn-hover;
-  }
-
-  margin-right: 5px;
-  border-radius: 5px;
-  transition: all 0.3s;
-  border: 4px solid $btn-default-color;
-
-  label {
-    padding-left: 70px;
-    color: $btn-default-color;
+/* ungrid.css (97 bytes minified) */
+@media (min-width: 30em) {
+  .row {
     width: 100%;
-    transition: all 0.3s;
-    font-size: 1.3em;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: .125em;
-    pointer-events: none;
+    display: table;
+    table-layout: fixed;
+  }
+
+  .col {
+    display: table-cell;
   }
 }
 
-.true-wrap,
-.false-wrap {
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+/* Demo styles */
+.col {
+  vertical-align: middle;
+  font: 300 18px/3 "Helvetica Neue", sans-serif;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
-
-
-input[type=radio] {
-  -webkit-appearance: none !important;
-  outline: none !important;
-  background: none;
-  border: none;
-  display: none;
-}
-
-.check {
-  display: block;
-  border: none !important;
-  height: 45px;
-  width: 45px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-
-
-  svg {
-    .circle {
-      stroke: $btn-default-color;
-      stroke-width: 40;
-    }
-
-  }
-
-  .inner {
-    display: block;
-    border-radius: 10%;
-    height: 35px;
-    width: 35px;
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    left: 5px;
-    transform: translateY(-20%);
-    // display:none;
-    transition: all 0.3s;
-  }
-}
-
-
-//default
-.wrap {
-  float: left;
-
-  input[type=radio]~.input-wrap {}
-}
-
-.wrap.right {
-  // float: right;
-}
-
-//default checked
-.wrap {
-  input[type=radio]:checked~.input-wrap {
-    .inner {
-      opacity: 1;
-      transform: translateY(-50%);
-    }
-  }
-}
-
-//true checked
-.wrap {
-  input[type=radio]:checked~.true-wrap {
-    border-color: $true-color;
-    background: $btn-true-checked;
-    box-shadow: 0px 2px 10px rgba($btn-true-checked, 1);
-
-    label {
-      color: $true-color;
-    }
-
-    .check {
-      svg {
-        .circle {
-          stroke: $true-color;
-        }
-      }
-
-      .inner {
-        fill: $true-color;
-      }
-
-    }
-  }
-}
-
-.wrap {
-  input[type=radio]:checked~.false-wrap {
-    box-shadow: 0px 2px 10px rgba($btn-false-checked, 1);
-    background: $btn-false-checked;
-    border-color: $false-color;
-
-    label {
-      color: $false-color;
-    }
-
-    .check {
-      svg {
-        .circle {
-          stroke: $false-color;
-        }
-      }
-
-      .inner {
-        fill: $false-color;
-      }
-
-    }
-  }
+.col:nth-of-type(even) {
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 //////////////////////CREATE SURVEY SECTION////////////////////////////////////////

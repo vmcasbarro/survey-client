@@ -1,0 +1,27 @@
+{{#each logs as |log|}}
+
+<div class="card text-center">
+    <div class="card-header">
+        <h5 data-id="{{log.id}}">{{log.date}}</h5>
+    </div>
+    <div class="card-body">
+        <section data-id="{{log.id}}">
+            <p>{{#if log.feet}}
+                Feet: {{log.feet}}
+                {{else}}
+                No log provided.
+                {{/if}}
+            </p>
+            <p>{{#if log.activity}}
+                Activity: {{log.activity}}
+                {{else}}
+                No activity provided.
+                {{/if}}
+            </p>
+            <button id="deleteButton" class="fas fa-trash-alt" aria-hidden="true" type="submit"></button>
+            <button id="updateButton" class="fas fa-edit" aria-hidden="true" data-toggle="modal" data-target="#modalUpdateLogForm"></button>
+        </section>
+    </div>
+</div>
+
+{{/each}}
