@@ -5,8 +5,10 @@ const api = require('./api.js')
 const ui = require('./ui.js')
 
 const onNewSurvey = (event) => {
+  console.log('hello!')
   event.preventDefault()
   const surveyData = getFormFields(event.target)
+  console.log(surveyData)
   api.newSurvey(surveyData)
     .then(ui.newSurveySuccess)
     .catch(ui.newSurveyFailure)
