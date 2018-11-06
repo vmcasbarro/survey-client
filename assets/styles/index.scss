@@ -25,11 +25,64 @@
 
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-
-.main-menu {
-  display: inline-block;
-  margin-left: 17px;
-  width: 66%;
-  // probably wont need these previous one only for 
+.sign-up-log-in {
+  display: none;
 }
+
+//////////////////////////////// NAV BAR ////////////////////////////////////////////////////////////////////////////////-->
+
+#navbar {
+  font-family: 'Libre Baskerville';
+  overflow: hidden;
+  background-color: #333;
+  //background: linear-gradient(blue, #333);
+
+  z-index: 3000;
+
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: grey;
+  color: blue;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky+.content {
+  padding-top: 60px;
+}
+
+////////////////////////////////////////////////////////////////////////////////////
+.home-menu {
+  // display: inline-block;
+  // margin-left: 17px;
+  margin: 0 auto; // probably wont need these previous one only for 
+  height: 200vh;
+  display: none;
+}
+
+
+///////////////////////////TESTING IT/////////////////////////////////////////////////////////
