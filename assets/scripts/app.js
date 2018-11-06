@@ -15,10 +15,8 @@ $(() => {
   $('#sign-in-form').on('submit', authEvents.onSignIn)
   $('#change-password-form').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('click', authEvents.onSignOut)
-})
 
-// Survey events
-$(() => {
+  // Survey events
   $('#new-survey-form').on('submit', surveyEvents.onNewSurvey)
   $('#update-survey-form').on('submit', surveyEvents.onUpdateSurvey)
   $('#delete-survey-button').on('submit', surveyEvents.onDestroySurvey)
