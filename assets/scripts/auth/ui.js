@@ -15,6 +15,7 @@ const signInSuccess = (response) => {
   $('#sign-in-form').trigger('reset')
   $('#sign-up-form').addClass('hidden')
   $('#sign-in-form').addClass('hidden')
+  $('.home-menu').removeClass('hidden')
 }
 
 const signInFailure = () => {
@@ -33,6 +34,7 @@ const passwordChangeFailure = () => {
 const signOutSuccess = () => {
   $('#sign-up-form').removeClass('hidden')
   $('#sign-in-form').removeClass('hidden')
+  $('.home-menu').addClass('hidden')
 }
 
 const signOutFailure = () => {
