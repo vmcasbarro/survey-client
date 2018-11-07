@@ -22,10 +22,14 @@ function myFunction() {
 
 const showOneSurveySuccess = (response) => {
   $('.reset').trigger('reset')
+  $('#display-survey-message').html('Survey displayed')
+  $('#display-survey-message').css('green')
 }
 
 const showOneSurveyFailure = () => {
   $('.reset').trigger('reset')
+  $('#display-survey-message').html('Something went wrong, please try again')
+  $('#display-survey-message').css('red')
 }
 
 const showAllSurveysSuccess = (data) => {
@@ -36,33 +40,47 @@ const showAllSurveysSuccess = (data) => {
 
 const showAllSurveysFailure = () => {
   $('.reset').trigger('reset')
+  $('#display-survey-message').html('Something went wrong, please try again')
+  $('#display-survey-message').css('red')
 }
 
 const newSurveySuccess = (data) => {
   store.log = data.lo
   $('.reset').trigger('reset')
+  $('#display-survey-message').html('Survey created')
+  $('#display-survey-message').css('green')
 }
 
 const newSurveyFailure = () => {
   $('.reset').trigger('reset')
+  $('#display-survey-message').html('Something went wrong, please try again')
+  $('#display-survey-message').css('red')
 }
 
 const updateSurveySuccess = (data) => {
   // store.survey = data.survey
   console.log(data)
   $('.reset').trigger('reset')
+  $('#display-survey-message').html('Survey updated')
+  $('#display-survey-message').css('green')
 }
 
 const updateSurveyFailure = () => {
   $('.reset').trigger('reset')
+  $('#display-survey-message').html('Something went wrong, please try again')
+  $('#display-survey-message').css('red')
 }
 
 const destroySurveySuccess = () => {
   $('.reset').trigger('reset')
+  $('#display-survey-message').html('Survey removed')
+  $('#display-survey-message').css('green')
 }
 
 const destroySurveyFailure = () => {
   $('.reset').trigger('reset')
+  $('#display-survey-message').html('Something went wrong, please try again')
+  $('#display-survey-message').css('red')
 }
 
 // const successAlert = () => {
