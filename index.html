@@ -86,7 +86,7 @@
       <h3 class=""> Know your audience </h3>
 
       <button type="button" class="btn btn-primary btn-block" id="show-all-surveys">SEE ALL SURVEYS</button>
-      <button type="button" class="btn btn-primary btn-block">CREATE YOUR OWN SURVEY</button>
+      <button type="button" class="btn btn-primary btn-block" id="create-own-survey">CREATE YOUR OWN SURVEY</button>
 
     </div>
   </section>
@@ -112,6 +112,18 @@
     </div>
   </section>
 
+  <!--///////////////////////////CREATE SURVEY////////////////////////////////////////////-->
+  <section class="new-survey-section" id="create-survey-section" style="display: block">
+    <div class="create-survey-div jumbotron hidden">
+      <div>
+        <h3>What Question will your survey ask?</h3>
+      </div>
+      <form id="new-survey-form">
+        <textarea name="survey[question]" cols="30" rows="10" class="notes"></textarea>
+        <button type="submit" class="btn btn-block btn-primary" style="width: 250px">SUBMIT SURVEY</button>
+      </form>
+    </div>
+  </section>
   <!--///////////////////////////ANSWER SURVEY////////////////////////////////////////////-->
   <section class="see-all-surveys-section survey-component" id="see-all-surveys-section">
     <!-- <div class="row">
@@ -136,7 +148,7 @@
     </div>
 
   <!--///////////////////////////CREATE SURVEY////////////////////////////////////////////-->
-  <section class="new-survey-section" id="create-survey-section" style="display: block">
+  <!-- <section class="new-survey-section" id="create-survey-section" style="display: block">
     <div class="create-survey-div jumbotron hidden">
       <div>
         <h3>What Question will your survey ask?</h3>
@@ -146,7 +158,7 @@
         <button type="submit" class="btn btn-block btn-primary" style="width: 250px">SUBMIT SURVEY</button>
       </form>
     </div>
-  </section>
+  </section> -->
 
 
 </body>
