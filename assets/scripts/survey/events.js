@@ -70,10 +70,17 @@ const onConfirmDeleteSurvey = (event) => {
   $(deleteButton).on('click', onDeleteSurvey)
 }
 
+const onShowMySurveys = (event) => {
+  event.preventDefault()
+  ui.showMySurveys()
+
+}
+
 module.exports = {
   onNewSurvey,
   onShowAllSurveys,
   onShowOneSurvey,
   onUpdateSurvey,
-  onConfirmDeleteSurvey
+  onConfirmDeleteSurvey,
+  onShowMySurveys
 }

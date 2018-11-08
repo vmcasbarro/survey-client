@@ -2,6 +2,7 @@
 
 const store = require('../store.js')
 const showSurveysTemplate = require('../templates/surveys.handlebars')
+const showMySurveysTemplate = require('../templates/my-surveys.handlebars')
 
 window.onscroll = function () {
   myFunction()
@@ -49,6 +50,13 @@ const showAllSurveysSuccess = (data) => {
   $('.reset').trigger('reset')
   const showSurveysHtml = showSurveysTemplate({ surveys: data.surveys })
   $('.survey-component').html(showSurveysHtml)
+}
+
+const showMySurveys = () => {
+  const showMySurveysHtml = showMySurveysTemplate({
+    surveys: store.mySurveys
+  })
+  $('.my-surveys-component').html(showMySurveysHtml)
 }
 
 const showAllSurveysFailure = () => {
@@ -116,6 +124,7 @@ module.exports = {
   showOneSurveySuccess,
   showOneSurveyFailure,
   showAllSurveysSuccess,
+  showMySurveys,
   showAllSurveysFailure,
   newSurveySuccess,
   newSurveyFailure,
