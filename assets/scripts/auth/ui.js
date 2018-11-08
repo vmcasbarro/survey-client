@@ -64,6 +64,7 @@ const passwordChangeSuccess = () => {
 }
 
 const passwordChangeFailure = () => {
+  clearForms()
   $('#change-password-form').trigger('reset')
   $('.div-for-password-message-fail').show()
   // clearForms()
