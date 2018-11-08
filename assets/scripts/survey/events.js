@@ -59,7 +59,7 @@ const onUpdateSurvey = (event) => {
 const onDeleteSurvey = (event) => {
   event.preventDefault()
   const surveyId = event.target.dataset.id
-  api.destroySurvey(surveyId)
+  api.deleteSurvey(surveyId)
     .then(ui.deleteSurveySuccess)
     .catch(ui.deleteSurveyFailure)
 }
