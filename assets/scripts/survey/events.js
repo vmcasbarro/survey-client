@@ -60,8 +60,8 @@ const onDeleteSurvey = (event) => {
   event.preventDefault()
   const surveyId = event.target.dataset.id
   api.destroySurvey(surveyId)
-    .then(ui.destroySurveySuccess)
-    .catch(ui.destroySurveyFailure)
+    .then(ui.deleteSurveySuccess)
+    .catch(ui.deleteSurveyFailure)
 }
 
 module.exports = {

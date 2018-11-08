@@ -72,16 +72,18 @@ const updateSurveyFailure = () => {
   $('#display-survey-message').css('red')
 }
 
-const destroySurveySuccess = () => {
+const deleteSurveySuccess = () => {
   $('.reset').trigger('reset')
-  $('#display-survey-message').html('Survey removed')
-  $('#display-survey-message').css('green')
+  console.log('successfully deleted survey!')
+  // $('#display-survey-message').html('Survey removed')
+  // $('#display-survey-message').css('green')
 }
 
-const destroySurveyFailure = () => {
+const deleteSurveyFailure = () => {
   $('.reset').trigger('reset')
-  $('#display-survey-message').html('Something went wrong, please try again')
-  $('#display-survey-message').css('red')
+  console.log('did not delete the survey!')
+  // $('#display-survey-message').html('Something went wrong, please try again')
+  // $('#display-survey-message').css('red')
 }
 
 // const successAlert = () => {
@@ -107,6 +109,6 @@ module.exports = {
   newSurveyFailure,
   updateSurveySuccess,
   updateSurveyFailure,
-  destroySurveySuccess,
-  destroySurveyFailure
+  deleteSurveySuccess,
+  deleteSurveyFailure
 }
