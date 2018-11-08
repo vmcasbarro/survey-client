@@ -110,7 +110,6 @@ const deleteSurveySuccess = () => {
   console.log('successfully deleted survey!')
   // $('#display-survey-message').html('Survey removed')
   // $('#display-survey-message').css('green')
-  showAllMySurveysEvent.onShowAllMySurveys()
 }
 
 const deleteSurveyFailure = () => {
