@@ -3,6 +3,7 @@
 const store = require('../store.js')
 const showSurveysTemplate = require('../templates/surveys.handlebars')
 const showMySurveysTemplate = require('../templates/my-surveys.handlebars')
+const authUi = require('../auth/ui.js')
 
 window.onscroll = function () {
   myFunction()
@@ -79,6 +80,7 @@ const showAllSurveysFailure = () => {
 const newSurveySuccess = (data) => {
   console.log(data)
   $('.reset').trigger('reset')
+  $('#new-survey-form').trigger('reset')
   // $('#display-survey-message').html('Survey created')
   // $('#display-survey-message').css('green')
   // showAllSurveysEvent.onShowAllSurveys()

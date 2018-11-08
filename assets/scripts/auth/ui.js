@@ -4,24 +4,23 @@ const store = require('../store.js')
 const surveyEvents = require('../survey/events.js')
 
 const signUpSuccess = () => {
+  clearForms()
   $('#display-sign-up-message').html('Sign up successful')
   $('#display-sign-up-message').css('color', 'green')
   $('#sign-up-form').trigger('reset')
-
-  clearForms()
 }
 
 const signUpFailure = () => {
+  clearForms()
   $('#display-sign-up-message').html('Something went wrong, please try again')
   $('#display-sign-up-message').css('color', 'red')
   $('#sign-up-form').trigger('reset')
-
-  clearForms()
 }
 
 const signInSuccess = (response) => {
   console.log(response.user)
   store.user = response.user
+  clearForms()
   // $('#display-log-in-message').html('Sign in successful')
   // $('#display-log-in-message').css('color', 'green')
   $('#sign-in-form').trigger('reset')
@@ -34,34 +33,34 @@ const signInSuccess = (response) => {
   $('.create-survey-div').removeClass('hidden')
   $('.see-all-surveys-section').removeClass('hidden')
   $('.see-my-surveys-section').removeClass('hidden')
-  clearForms()
   surveyEvents.onShowAllSurveys()
   // $('#change-password-message').html('')
 }
 
 const signInFailure = () => {
+  clearForms()
   $('#display-log-in-message').html('Sign in failed, please try again')
   $('#display-log-in-message').css('color', 'red')
   $('#sign-in-form').trigger('reset')
-  clearForms()
 }
 
 const passwordChangeSuccess = () => {
+  clearForms()
   $('#display-survey-message').html('Change Password successful')
   $('#display-survey-message').css('color', 'green')
   $('#change-password-form').trigger('reset')
   // $('#change-password-form').addClass('hidden')
-  clearForms()
 }
 
 const passwordChangeFailure = () => {
+  clearForms()
   $('#display-survey-message').html('Change Password failed, try again')
   $('#display-survey-message').css('color', 'red')
   $('#change-password-form').trigger('reset')
-  clearForms()
 }
 
 const signOutSuccess = () => {
+  clearForms()
   // $('#display-log-in-message').html('Sign Out successful')
   // $('#display-log-in-message').css('color', 'green')
   $('.sign-up-log-in').removeClass('hidden')
@@ -79,9 +78,9 @@ const signOutSuccess = () => {
 }
 
 const signOutFailure = () => {
+  clearForms()
   $('#display-survey-message').html('Something went wrong, try again')
   $('#display-survey-message').css('color', 'red')
-  clearForms()
 }
 
 const clearForms = function () {
@@ -89,6 +88,7 @@ const clearForms = function () {
   $('#sign-up-form').trigger('reset')
   $('#change-password-form').trigger('reset')
   $('#new-survey-form').trigger('reset')
+  $('#display-sign-up-message').empty()
 }
 
 module.exports = {
@@ -99,5 +99,6 @@ module.exports = {
   passwordChangeSuccess,
   passwordChangeFailure,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  clearForms
 }
