@@ -1,1 +1,170 @@
 @import '~bootstrap/scss/bootstrap';
+
+.hidden {
+  display: none;
+}
+
+.sign-up-div {
+  float: left;
+  clear: both;
+  margin-right: 1em;
+}
+
+.sign-in-div {
+  float: left;
+  margin-top: -1px;
+  height: 380px;
+
+}
+
+.div-with-change-password-form {
+  margin-left: 25px;
+}
+
+.sign-in-and-out {
+  margin-top: 0px;
+  display: inline-block;
+  height: 100vh;
+  background: url(https://images.pexels.com/photos/7108/notebook-computer-chill-relax.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)center no-repeat;
+
+}
+
+.sign-up-log-in .jumbotron {
+  background: rgba(204, 204, 204, 0.8);
+  margin-top: 30px;
+}
+
+.sign-up-log-in {
+  // display: none;
+}
+
+//////////////////////////////// NAV BAR ////////////////////////////////////////////////////////////////////////////////-->
+
+#navbar {
+  // font-family: 'Libre Baskerville';
+  overflow: hidden;
+  background-color: #333;
+  //background: linear-gradient(blue, #333);
+  z-index: 3000;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: grey;
+  color: blue;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky+.content {
+  padding-top: 60px;
+}
+
+////////////////////////////HOME SECTION////////////////////////////////////////////////////////
+.home-menu {
+  height: 100vh;
+  background: url(https://images.pexels.com/photos/7100/iphone-desk-laptop-notebook.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)center no-repeat;
+  //  display: none;
+}
+
+.home-menu .jumbotron {
+  background: rgba(204, 204, 204, 0.7);
+  margin: 100px 10%;
+}
+
+
+///////////////////////////CHANGE PASSWORD SECTION/////////////////////////////////////////////////////////
+
+.change-password-section {
+  height: 70vh;
+  margin: 5%
+}
+
+.change-password-div {
+  float: left;
+  margin: 10px auto 10px 15px;
+  height: 380px;
+}
+
+///////////////////////// ANSWER SURVEYS + SEE-ALL SURVEYS SECTION /////////////////////////////////////////////////////
+.see-all-surveys-section {
+  margin: 5%;
+}
+
+
+/* ungrid.css (97 bytes minified) */
+@media (min-width: 30em) {
+  .row {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+  }
+
+  .col {
+    display: table-cell;
+  }
+}
+
+/* Demo styles */
+.col {
+  vertical-align: middle;
+  font: 300 18px/3 "Helvetica Neue", sans-serif;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.col:nth-of-type(even) {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+//////////////////////CREATE SURVEY SECTION////////////////////////////////////////
+
+.create-survey-section {
+  margin: 5%
+}
+
+.notes {
+  background-image: -webkit-linear-gradient(white, white 30px, #ccc 30px, #ccc 31px, white 31px);
+  background-image: -moz-linear-gradient(white, white 30px, #ccc 30px, #ccc 31px, white 31px);
+  background-image: -ms-linear-gradient(white, white 30px, #ccc 30px, #ccc 31px, white 31px);
+  background-image: -o-linear-gradient(white, white 30px, #ccc 30px, #ccc 31px, white 31px);
+  background-image: linear-gradient(white, white 30px, #ccc 30px, #ccc 31px, white 31px);
+  background-size: 100% 31px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  line-height: 45px;
+  font-family: Arial, Helvetica, Sans-serif;
+  font-size: 35px;
+  padding: 8px;
+}
+
+textarea {
+  margin: 5% 0;
+}
+
+textarea placeholder {
+  color: red;
+}

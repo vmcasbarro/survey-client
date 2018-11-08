@@ -1,0 +1,20 @@
+<h2>My Surveys</h2>
+{{#each surveys as |survey|}}
+  <div>
+    <div class="card-header">
+      <h5 data-id="{{survey._id}}">{{survey.question}}</h5>
+      <button data-id="{{survey._id}}" id="delete-button" class="btn btn-outline-danger">Delete</button>
+    </div>
+    <div class="survey-responses">
+      <p>responses:</p>
+      {{#unless survey.responses}}
+        <p>no responses yet!</p>
+      {{/unless}}
+      {{#each survey.responses as |response|}}
+        <div class="">
+          {{this.0.answer}}
+        </div>
+      {{/each}}
+    </div>
+  </div>
+{{/each}}
