@@ -23,6 +23,14 @@ const onShowAllSurveys = (event) => {
     .catch(ui.showAllSurveysFailure)
 }
 
+const onShowAllSurveysButStay = (event) => {
+  // event.preventDefault()
+  api.showAllSurveys()
+    // .then(console.log(event.surveys))
+    .then(ui.showAllSurveysSuccessButStay)
+    .catch(ui.showAllSurveysFailure)
+}
+
 const onShowOneSurvey = (event) => {
   event.preventDefault()
   const surveyData = getFormFields(event.target)
@@ -53,7 +61,7 @@ const onUpdateSurvey = (event) => {
   console.log(surveyData)
   api.updateSurvey(surveyData, surveyId)
     .then(ui.updateSurveySuccess)
-    .then(onShowAllSurveys)
+    .then(onShowAllSurveysButStay)
     .catch(ui.updateSurveyFailure)
 }
 

@@ -72,6 +72,34 @@ const showAllSurveysSuccess = (data) => {
   }, 500)
 }
 
+const showAllSurveysSuccessButStay = (data) => {
+  console.log('all the surveys in the database: \n', data)
+  const allSurveys = data
+  const userId = store.user._id
+
+  const allMySurveys = allSurveys.surveys.filter(function (survey) {
+    return survey.owner === userId
+  })
+
+  store.mySurveys = allMySurveys
+
+  console.log('my surveys: ', allMySurveys)
+
+  console.log('user _id is: ', userId)
+  $('.reset').trigger('reset')
+  const showSurveysHtml = showSurveysTemplate({
+    surveys: data.surveys
+  })
+
+  $('.my-surveys-component').addClass('hidden')
+  $('.survey-component').removeClass('hidden')
+  $('.survey-component').html(showSurveysHtml)
+
+  // $('#display-survey-message').html('All surveys shown')
+  $('#display-survey-message').css('black')
+}
+
+
 const showMySurveys = () => {
   const showMySurveysHtml = showMySurveysTemplate({
     surveys: store.mySurveys
@@ -86,6 +114,7 @@ const showMySurveys = () => {
     scrollTop: ($('#see-my-surveys-section').offset().top)
   }, 500)
 }
+
 
 const showAllSurveysFailure = () => {
   $('.reset').trigger('reset')
@@ -167,5 +196,6 @@ module.exports = {
   updateSurveySuccess,
   updateSurveyFailure,
   deleteSurveySuccess,
-  deleteSurveyFailure
+  deleteSurveyFailure,
+  showAllSurveysSuccessButStay
 }
