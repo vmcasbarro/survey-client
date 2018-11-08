@@ -75,10 +75,8 @@ const signOutSuccess = () => {
   $('.see-my-surveys-section').addClass('hidden')
   $('#display-log-in-message').html('')
   // $('#change-password-message').html('')
-  clearForms()
-}
+  $('#navbar-at-sign-up').show(); // ALFREDO ADDED THIS. KEEP
 
-const signOutFailure = () => {
   $('#display-survey-message').html('Something went wrong, try again')
   $('#display-survey-message').css('color', 'red')
   clearForms()

@@ -86,7 +86,7 @@
 .home-menu {
   height: 100vh;
   background: url(https://images.pexels.com/photos/7100/iphone-desk-laptop-notebook.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)center no-repeat;
-  //  display: none;
+  background-attachment: fixed;
 }
 
 .home-menu .jumbotron {
@@ -165,6 +165,23 @@ textarea {
   margin: 5% 0;
 }
 
-textarea placeholder {
-  color: red;
+///////////////////////////////////// MEDIA QUERIES //////////////////////////////////////////
+
+@media screen and (max-width: 815px) {
+
+  #navbar .nav-see-all-btn,
+  #navbar .nav-change-password-btn {
+    display: none;
+  }
 }
+
+@media screen and (max-width: 415px) {
+
+  #navbar .nav-see-all-btn,
+  #navbar .nav-change-password-btn,
+  #navbar .nav-create-btn {
+    display: none;
+  }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////
