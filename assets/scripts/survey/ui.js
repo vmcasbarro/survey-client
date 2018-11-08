@@ -33,7 +33,19 @@ const showOneSurveyFailure = () => {
 }
 
 const showAllSurveysSuccess = (data) => {
-  console.log('the data is: ', data)
+  console.log('all the surveys in the database: \n', data)
+  const allSurveys = data
+  const userId = store.user._id
+
+  const allMySurveys = allSurveys.surveys.filter(function (survey) {
+    return survey.owner === userId
+  })
+
+  store.mySurveys = allMySurveys
+
+  console.log('my surveys: ', allMySurveys)
+
+  console.log('user _id is: ', userId)
   $('.reset').trigger('reset')
   const showSurveysHtml = showSurveysTemplate({ surveys: data.surveys })
   $('.survey-component').html(showSurveysHtml)
