@@ -39,15 +39,15 @@ const signInFailure = () => {
 }
 
 const passwordChangeSuccess = () => {
-  $('#change-password-message').html('Change Password successful')
-  $('#change-password-message').css('color', 'green')
+  $('#display-survey-message').html('Change Password successful')
+  $('#display-survey-message').css('color', 'green')
   $('#change-password-form').trigger('reset')
   // $('#change-password-form').addClass('hidden')
 }
 
 const passwordChangeFailure = () => {
-  $('#change-password-message').html('Change Password failed, please try again')
-  $('#change-password-message').css('color', 'red')
+  $('#display-survey-message').html('Change Password failed, try again')
+  $('#display-survey-message').css('color', 'red')
   $('#change-password-form').trigger('reset')
 }
 
@@ -66,8 +66,8 @@ const signOutSuccess = () => {
 }
 
 const signOutFailure = () => {
-  $('#display-log-in-message').html('Something went wrong, please try again')
-  $('#display-log-in-message').css('color', 'red')
+  $('#display-survey-message').html('Something went wrong, try again')
+  $('#display-survey-message').css('color', 'red')
 }
 
 // const successAlert = () => {
