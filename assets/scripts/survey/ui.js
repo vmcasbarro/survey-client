@@ -3,8 +3,6 @@
 const store = require('../store.js')
 const showSurveysTemplate = require('../templates/surveys.handlebars')
 const showMySurveysTemplate = require('../templates/my-surveys.handlebars')
-const showAllSurveysEvent = require('./show-all-surveys.js')
-const showAllMySurveysEvent = require('./show-all-my-surveys.js')
 
 window.onscroll = function () {
   myFunction()

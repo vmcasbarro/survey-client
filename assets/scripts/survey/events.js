@@ -11,6 +11,7 @@ const onNewSurvey = (event) => {
   console.log(surveyData)
   api.newSurvey(surveyData)
     .then(ui.newSurveySuccess)
+    .then(onShowAllSurveys)
     .catch(ui.newSurveyFailure)
 }
 
