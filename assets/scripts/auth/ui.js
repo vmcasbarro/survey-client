@@ -3,6 +3,14 @@
 const store = require('../store.js')
 const surveyEvents = require('../survey/events.js')
 
+$(() => {
+  $('.div-for-password-message').hide() // Alfredo says: this hides the success animation (by default) 
+  $('.div-for-create-survey-message').hide() // Alfredo Says: this hides the success animation (by default)
+  $('.div-for-password-message-fail').hide()
+  $('#create-survey-section').hide()
+})
+
+
 const signUpSuccess = () => {
   clearForms()
   $('#display-sign-up-message').html('Sign up successful')
@@ -23,6 +31,7 @@ const signInSuccess = (response) => {
   clearForms()
   // $('#display-log-in-message').html('Sign in successful')
   // $('#display-log-in-message').css('color', 'green')
+  $('#create-survey-section').show()
   $('#sign-in-form').trigger('reset')
   $('.sign-up-log-in').addClass('hidden')
   $('#sign-up-form').addClass('hidden')
@@ -45,18 +54,23 @@ const signInFailure = () => {
 }
 
 const passwordChangeSuccess = () => {
+  $('.div-for-password-message').show()
+  $('.div-for-password-message').fadeOut(4000)
+  //$('#display-survey-message').html('Change Password successful')
+  //$('#display-survey-message').css('color', 'green')
+  // $('#change-password-form').trigger('reset')
+  // $('#change-password-form').addClass('hidden') // Alfredo says: this line was previously commented out. I commented out the others. 
   clearForms()
-  $('#display-survey-message').html('Change Password successful')
-  $('#display-survey-message').css('color', 'green')
-  $('#change-password-form').trigger('reset')
-  // $('#change-password-form').addClass('hidden')
 }
 
 const passwordChangeFailure = () => {
-  clearForms()
-  $('#display-survey-message').html('Change Password failed, try again')
-  $('#display-survey-message').css('color', 'red')
   $('#change-password-form').trigger('reset')
+  $('.div-for-password-message-fail').show()
+  // clearForms()
+  // $('#display-survey-message').html('Change Password failed, try again')
+  // $('#display-survey-message').css('color', 'red')
+  $('.div-for-password-message-fail').show()
+  $('.div-for-password-message-fail').fadeOut(4000)
 }
 
 const signOutSuccess = () => {
