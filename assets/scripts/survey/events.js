@@ -15,8 +15,7 @@ const onNewSurvey = (event) => {
 }
 
 const onShowAllSurveys = (event) => {
-  event.preventDefault()
-  console.log('you made it!')
+  // event.preventDefault()
   api.showAllSurveys()
     // .then(console.log(event.surveys))
     .then(ui.showAllSurveysSuccess)
@@ -56,12 +55,25 @@ const onUpdateSurvey = (event) => {
     .catch(ui.updateSurveyFailure)
 }
 
-const onDestroySurvey = (event) => {
+const onDeleteSurvey = (event) => {
   event.preventDefault()
-  const surveyData = getFormFields(event.target)
-  api.destroySurvey(surveyData)
-    .then(ui.destroySurveySuccess)
-    .catch(ui.destroySurveyFailure)
+  const surveyId = event.target.dataset.id
+  api.deleteSurvey(surveyId)
+    .then(ui.deleteSurveySuccess)
+    .catch(ui.deleteSurveyFailure)
+}
+
+const onConfirmDeleteSurvey = (event) => {
+  event.preventDefault()
+  const deleteButton = event.target
+  $(deleteButton).html('Are you sure you want to delete? (click)')
+  $(deleteButton).on('click', onDeleteSurvey)
+}
+
+const onShowMySurveys = (event) => {
+  event.preventDefault()
+  ui.showMySurveys()
+
 }
 
 module.exports = {
@@ -69,5 +81,6 @@ module.exports = {
   onShowAllSurveys,
   onShowOneSurvey,
   onUpdateSurvey,
-  onDestroySurvey
+  onConfirmDeleteSurvey,
+  onShowMySurveys
 }

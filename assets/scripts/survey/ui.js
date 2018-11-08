@@ -2,6 +2,7 @@
 
 const store = require('../store.js')
 const showSurveysTemplate = require('../templates/surveys.handlebars')
+const showMySurveysTemplate = require('../templates/my-surveys.handlebars')
 
 window.onscroll = function () {
   myFunction()
@@ -33,10 +34,34 @@ const showOneSurveyFailure = () => {
 }
 
 const showAllSurveysSuccess = (data) => {
-  console.log('the data is: ', data)
+  console.log('all the surveys in the database: \n', data)
+  const allSurveys = data
+  const userId = store.user._id
+
+  const allMySurveys = allSurveys.surveys.filter(function (survey) {
+    return survey.owner === userId
+  })
+
+  store.mySurveys = allMySurveys
+
+  console.log('my surveys: ', allMySurveys)
+
+  console.log('user _id is: ', userId)
   $('.reset').trigger('reset')
   const showSurveysHtml = showSurveysTemplate({ surveys: data.surveys })
+
+  $('.my-surveys-component').addClass('hidden')
+  $('.survey-component').removeClass('hidden')
   $('.survey-component').html(showSurveysHtml)
+}
+
+const showMySurveys = () => {
+  const showMySurveysHtml = showMySurveysTemplate({
+    surveys: store.mySurveys
+  })
+  $('.my-surveys-component').removeClass('hidden')
+  $('.survey-component').addClass('hidden')
+  $('.my-surveys-component').html(showMySurveysHtml)
 }
 
 const showAllSurveysFailure = () => {
@@ -46,7 +71,7 @@ const showAllSurveysFailure = () => {
 }
 
 const newSurveySuccess = (data) => {
-  store.log = data.lo
+  console.log(data)
   $('.reset').trigger('reset')
   $('#display-survey-message').html('Survey created')
   $('#display-survey-message').css('green')
@@ -72,16 +97,18 @@ const updateSurveyFailure = () => {
   $('#display-survey-message').css('red')
 }
 
-const destroySurveySuccess = () => {
+const deleteSurveySuccess = () => {
   $('.reset').trigger('reset')
-  $('#display-survey-message').html('Survey removed')
-  $('#display-survey-message').css('green')
+  console.log('successfully deleted survey!')
+  // $('#display-survey-message').html('Survey removed')
+  // $('#display-survey-message').css('green')
 }
 
-const destroySurveyFailure = () => {
+const deleteSurveyFailure = () => {
   $('.reset').trigger('reset')
-  $('#display-survey-message').html('Something went wrong, please try again')
-  $('#display-survey-message').css('red')
+  console.log('did not delete the survey!')
+  // $('#display-survey-message').html('Something went wrong, please try again')
+  // $('#display-survey-message').css('red')
 }
 
 // const successAlert = () => {
@@ -102,11 +129,12 @@ module.exports = {
   showOneSurveySuccess,
   showOneSurveyFailure,
   showAllSurveysSuccess,
+  showMySurveys,
   showAllSurveysFailure,
   newSurveySuccess,
   newSurveyFailure,
   updateSurveySuccess,
   updateSurveyFailure,
-  destroySurveySuccess,
-  destroySurveyFailure
+  deleteSurveySuccess,
+  deleteSurveyFailure
 }

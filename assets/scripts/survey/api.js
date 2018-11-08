@@ -49,9 +49,10 @@ const updateSurvey = (surveyData, surveyId) => {
   })
 }
 
-const destroySurvey = (surveyId) => {
+const deleteSurvey = (surveyId) => {
+  // console.log(surveyId)
   return $.ajax({
-    url: config.apiUrl + `/logs/${surveyId}`,
+    url: config.apiUrl + `/surveys/${surveyId}`,
     method: 'DELETE',
     headers: {
       Authorization: `Token token=${store.user.token}`
@@ -64,5 +65,5 @@ module.exports = {
   showAllSurveys,
   showOneSurvey,
   updateSurvey,
-  destroySurvey
+  deleteSurvey
 }
