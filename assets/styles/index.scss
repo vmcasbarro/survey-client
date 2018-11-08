@@ -4,6 +4,7 @@
   display: none;
 }
 
+/////////////////////////////////////////////////////////////////////
 .sign-up-div {
   float: left;
   clear: both;
@@ -35,7 +36,7 @@
 }
 
 .sign-up-log-in {
-  // display: none;
+  height: 100vh;
 }
 
 //////////////////////////////// NAV BAR ////////////////////////////////////////////////////////////////////////////////-->
@@ -86,29 +87,67 @@
 .home-menu {
   height: 100vh;
   background: url(https://images.pexels.com/photos/7100/iphone-desk-laptop-notebook.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)center no-repeat;
-  //  display: none;
+  background-attachment: fixed;
+  background-color: black;
 }
 
 .home-menu .jumbotron {
   background: rgba(204, 204, 204, 0.7);
-  margin: 100px 10%;
+  margin: 170px 15%;
+  text-align: center;
 }
 
 
 ///////////////////////////CHANGE PASSWORD SECTION/////////////////////////////////////////////////////////
 
 .change-password-section {
-  height: 70vh;
+  height: 50vh;
   margin: 5%
 }
 
-.change-password-div {
+.change-password-div,
+.div-for-password-message {
   float: left;
-  margin: 10px auto 10px 15px;
+  margin: 10px auto 10px 10px;
   height: 380px;
+  text-align: center;
 }
 
+.change-password-section input {
+  width: 300px;
+  margin-bottom: .5px;
+}
+
+
+///////////CHECKMARK ANIMATION//////////////////
+#check {
+  stroke-dasharray: 520;
+  stroke-dashoffset: 520;
+  animation: dash 0.5s ease-in forwards;
+  animation-delay: 0.3s;
+}
+
+#circle {
+  stroke-dasharray: 520;
+  stroke-dashoffset: 520;
+  animation: dash 0.3s ease-out forwards;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 520;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/////////////////////////////////////
+
+
 ///////////////////////// ANSWER SURVEYS + SEE-ALL SURVEYS SECTION /////////////////////////////////////////////////////
+
 .see-all-surveys-section {
   margin: 5%;
 }
@@ -141,9 +180,44 @@
 
 //////////////////////CREATE SURVEY SECTION////////////////////////////////////////
 
-.create-survey-section {
-  margin: 5%
+
+#create-survey-section {
+  background: url(https://images.pexels.com/photos/891059/pexels-photo-891059.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)center no-repeat;
+  background-attachment: fixed;
+  height: 115vh;
 }
+
+
+#create-survey-section .jumbotron {
+  background: rgba(244, 236, 236, 0.7);
+  margin: 5% 5%;
+}
+
+.div-for-create-survey-message,
+.div-for-create-survey-message-fail {
+  float: right;
+  margin: 10px auto 10px 10px;
+  height: 380px;
+  text-align: center;
+}
+
+.div-for-create-survey-message-fail,
+.div-for-password-message-fail {
+  color: red;
+}
+
+.div-for-password-message-fail {
+  margin: 10px auto 10px 10px;
+  height: 380px;
+  text-align: center;
+}
+
+// .create-survey-section .jumbotron {
+//   background: rgba(174, 16, 16, 0.8);
+//   margin-top: 20px;
+//   margin-bottom: -20px;
+// }
+
 
 .notes {
   background-image: -webkit-linear-gradient(white, white 30px, #ccc 30px, #ccc 31px, white 31px);
@@ -165,6 +239,56 @@ textarea {
   margin: 5% 0;
 }
 
-textarea placeholder {
-  color: red;
+
+///////////////////////////////HANDLEBARS FOR SEE-ALL////////////////////////////////////////////////////////
+
+.see-all-surveys-section {
+  margin: 5%;
+}
+
+/* ungrid.css (97 bytes minified) */
+@media (min-width: 30em) {
+  .row {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+  }
+
+  .col {
+    display: table-cell;
+  }
+}
+
+/* Demo styles */
+.col {
+  vertical-align: middle;
+  font: 300 18px/3 "Helvetica Neue", sans-serif;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.col:nth-of-type(even) {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.answer-div {}
+
+
+///////////////////////////////////// MEDIA QUERIES //////////////////////////////////////////
+
+@media screen and (max-width: 815px) {
+
+  #navbar .nav-see-all-btn,
+  #navbar .nav-change-password-btn {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 415px) {
+
+  #navbar .nav-see-all-btn,
+  #navbar .nav-change-password-btn,
+  #navbar .nav-create-btn {
+    display: none;
+  }
 }

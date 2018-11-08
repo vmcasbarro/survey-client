@@ -3,11 +3,13 @@
 const store = require('../store.js')
 const showSurveysTemplate = require('../templates/surveys.handlebars')
 const showMySurveysTemplate = require('../templates/my-surveys.handlebars')
+const authUi = require('../auth/ui.js')
+
+//////////////// FOR STICKY NAVIGATION PURPOSES ////////////////////
 
 window.onscroll = function () {
   myFunction()
 };
-//////////////// FOR STICKY NAVIGATION PURPOSES ////////////////////
 var navbar = document.getElementById("navbar");
 var sticky = navbar.offsetTop;
 
@@ -19,19 +21,26 @@ function myFunction() {
   }
 }
 
+////////////////////// FOR ANIMATION ON SUCESS PURPOSES ///////////////////////
+$(() => {
+  $('.div-for-create-survey-message').hide() // Alfredo Says: this hides the success animation (by default)
+  $('.div-for-create-survey-message-fail').hide()
+})
+
+
 ////////////////////////////////////////////////////////////////////
 
-const showOneSurveySuccess = (response) => {
-  $('.reset').trigger('reset')
-  $('#display-survey-message').html('Survey displayed')
-  $('#display-survey-message').css('green')
-}
-
-const showOneSurveyFailure = () => {
-  $('.reset').trigger('reset')
-  $('#display-survey-message').html('Something went wrong, please try again')
-  $('#display-survey-message').css('red')
-}
+// const showOneSurveySuccess = (response) => {
+//   $('.reset').trigger('reset')
+//   $('#display-survey-message').html('Survey displayed')
+//   $('#display-survey-message').css('green')
+// }
+//
+// const showOneSurveyFailure = () => {
+//   $('.reset').trigger('reset')
+//   $('#display-survey-message').html('Something went wrong, please try again')
+//   $('#display-survey-message').css('red')
+// }
 
 const showAllSurveysSuccess = (data) => {
   console.log('all the surveys in the database: \n', data)
@@ -48,12 +57,48 @@ const showAllSurveysSuccess = (data) => {
 
   console.log('user _id is: ', userId)
   $('.reset').trigger('reset')
-  const showSurveysHtml = showSurveysTemplate({ surveys: data.surveys })
+  const showSurveysHtml = showSurveysTemplate({
+    surveys: data.surveys
+  })
 
   $('.my-surveys-component').addClass('hidden')
   $('.survey-component').removeClass('hidden')
   $('.survey-component').html(showSurveysHtml)
+
+  // $('#display-survey-message').html('All surveys shown')
+  $('#display-survey-message').css('black')
+  $('html, body').animate({
+    scrollTop: ($('#see-all-surveys-section').offset().top)
+  }, 500)
 }
+
+const showAllSurveysSuccessButStay = (data) => {
+  console.log('all the surveys in the database: \n', data)
+  const allSurveys = data
+  const userId = store.user._id
+
+  const allMySurveys = allSurveys.surveys.filter(function (survey) {
+    return survey.owner === userId
+  })
+
+  store.mySurveys = allMySurveys
+
+  console.log('my surveys: ', allMySurveys)
+
+  console.log('user _id is: ', userId)
+  $('.reset').trigger('reset')
+  const showSurveysHtml = showSurveysTemplate({
+    surveys: data.surveys
+  })
+
+  $('.my-surveys-component').addClass('hidden')
+  $('.survey-component').removeClass('hidden')
+  $('.survey-component').html(showSurveysHtml)
+
+  // $('#display-survey-message').html('All surveys shown')
+  $('#display-survey-message').css('black')
+}
+
 
 const showMySurveys = () => {
   const showMySurveysHtml = showMySurveysTemplate({
@@ -62,39 +107,54 @@ const showMySurveys = () => {
   $('.my-surveys-component').removeClass('hidden')
   $('.survey-component').addClass('hidden')
   $('.my-surveys-component').html(showMySurveysHtml)
+
+  //$('#display-survey-message').html('User created surveys shown')
+  $('#display-survey-message').css('black')
+  $('html, body').animate({
+    scrollTop: ($('#see-my-surveys-section').offset().top)
+  }, 500)
 }
+
 
 const showAllSurveysFailure = () => {
   $('.reset').trigger('reset')
-  $('#display-survey-message').html('Something went wrong, please try again')
+  $('#display-survey-message').html('Something went wrong, try again')
   $('#display-survey-message').css('red')
 }
 
 const newSurveySuccess = (data) => {
   console.log(data)
   $('.reset').trigger('reset')
-  $('#display-survey-message').html('Survey created')
-  $('#display-survey-message').css('green')
+  $('.div-for-create-survey-message').fadeIn(100)
+  $('.div-for-create-survey-message').fadeOut(4000)
+  $('#new-survey-form').trigger('reset')
+  // $('#display-survey-message').html('Survey created')
+  // $('#display-survey-message').css('green')
+  // showAllSurveysEvent.onShowAllSurveys()
 }
 
 const newSurveyFailure = () => {
+  $('.div-for-create-survey-message-fail').fadeIn(100)
+  $('.div-for-create-survey-message-fail').fadeIn(4000)
+
   $('.reset').trigger('reset')
-  $('#display-survey-message').html('Something went wrong, please try again')
-  $('#display-survey-message').css('red')
+  $('#display-survey-message').html('Something went wrong, try again')
+  $('#display-survey-message').css('black')
 }
 
 const updateSurveySuccess = (data) => {
   // store.survey = data.survey
   console.log(data)
   $('.reset').trigger('reset')
-  $('#display-survey-message').html('Survey updated')
-  $('#display-survey-message').css('green')
+  // $('#display-survey-message').html('Survey updated')
+  // $('#display-survey-message').css('green')
+  // showAllSurveysEvent.onShowAllSurveys()
 }
 
 const updateSurveyFailure = () => {
   $('.reset').trigger('reset')
-  $('#display-survey-message').html('Something went wrong, please try again')
-  $('#display-survey-message').css('red')
+  // $('#display-survey-message').html('Something went wrong, please try again')
+  // $('#display-survey-message').css('red')
 }
 
 const deleteSurveySuccess = () => {
@@ -126,8 +186,8 @@ const deleteSurveyFailure = () => {
 // }
 
 module.exports = {
-  showOneSurveySuccess,
-  showOneSurveyFailure,
+  // showOneSurveySuccess,
+  // showOneSurveyFailure,
   showAllSurveysSuccess,
   showMySurveys,
   showAllSurveysFailure,
@@ -136,5 +196,6 @@ module.exports = {
   updateSurveySuccess,
   updateSurveyFailure,
   deleteSurveySuccess,
-  deleteSurveyFailure
+  deleteSurveyFailure,
+  showAllSurveysSuccessButStay
 }

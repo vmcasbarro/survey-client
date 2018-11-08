@@ -22,6 +22,11 @@ $(() => {
   $('#delete-survey-button').on('submit', surveyEvents.onDestroySurvey)
   $('#show-survey-button').on('submit', surveyEvents.onShowOneSurvey)
   $('#show-all-surveys').on('click', surveyEvents.onShowAllSurveys)
+  // $('#show-all-surveys').on('click', () => {
+  //   $('html, body').animate({
+  //     scrollTop: ($('#see-all-surveys-section').offset().top)
+  //   }, 500)
+  // })
 
   // My survey events
   $('#show-my-surveys').on('click', surveyEvents.onShowMySurveys)

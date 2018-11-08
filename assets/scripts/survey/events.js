@@ -11,6 +11,7 @@ const onNewSurvey = (event) => {
   console.log(surveyData)
   api.newSurvey(surveyData)
     .then(ui.newSurveySuccess)
+    .then(onShowAllSurveys)
     .catch(ui.newSurveyFailure)
 }
 
@@ -19,6 +20,14 @@ const onShowAllSurveys = (event) => {
   api.showAllSurveys()
     // .then(console.log(event.surveys))
     .then(ui.showAllSurveysSuccess)
+    .catch(ui.showAllSurveysFailure)
+}
+
+const onShowAllSurveysButStay = (event) => {
+  // event.preventDefault()
+  api.showAllSurveys()
+    // .then(console.log(event.surveys))
+    .then(ui.showAllSurveysSuccessButStay)
     .catch(ui.showAllSurveysFailure)
 }
 
@@ -52,6 +61,7 @@ const onUpdateSurvey = (event) => {
   console.log(surveyData)
   api.updateSurvey(surveyData, surveyId)
     .then(ui.updateSurveySuccess)
+    .then(onShowAllSurveysButStay)
     .catch(ui.updateSurveyFailure)
 }
 
@@ -60,20 +70,20 @@ const onDeleteSurvey = (event) => {
   const surveyId = event.target.dataset.id
   api.deleteSurvey(surveyId)
     .then(ui.deleteSurveySuccess)
+    .then(onShowAllSurveys)
     .catch(ui.deleteSurveyFailure)
 }
 
 const onConfirmDeleteSurvey = (event) => {
   event.preventDefault()
   const deleteButton = event.target
-  $(deleteButton).html('Are you sure you want to delete? (click)')
+  $(deleteButton).html('By clicking again, you will delete this survey.')
   $(deleteButton).on('click', onDeleteSurvey)
 }
 
 const onShowMySurveys = (event) => {
   event.preventDefault()
   ui.showMySurveys()
-
 }
 
 module.exports = {
