@@ -88,6 +88,7 @@
   height: 100vh;
   background: url(https://images.pexels.com/photos/7100/iphone-desk-laptop-notebook.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)center no-repeat;
   background-attachment: fixed;
+  background-color: black;
 }
 
 .home-menu .jumbotron {
@@ -99,7 +100,7 @@
 ///////////////////////////CHANGE PASSWORD SECTION/////////////////////////////////////////////////////////
 
 .change-password-section {
-  height: 70vh;
+  height: 10vh;
   margin: 5%
 }
 
@@ -142,8 +143,15 @@
 
 //////////////////////CREATE SURVEY SECTION////////////////////////////////////////
 
-.create-survey-section {
-  margin: 5%
+#create-survey-section .jumbotron {
+  background: rgba(204, 204, 204, 0.7);
+  margin: 20% 5%;
+}
+
+#create-survey-section {
+  background: url(https://images.pexels.com/photos/891059/pexels-photo-891059.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)center no-repeat;
+  background-attachment: fixed;
+
 }
 
 .notes {
@@ -165,7 +173,6 @@
 textarea {
   margin: 5% 0;
 }
-
 
 .create-survey-section .jumbotron {
   background: rgba(174, 16, 16, 0.8);
