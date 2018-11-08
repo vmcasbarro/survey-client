@@ -18,7 +18,7 @@ const onShowAllSurveys = (event) => {
   event.preventDefault()
   console.log('you made it!')
   api.showAllSurveys()
-    .then(console.log(event.surveys))
+    // .then(console.log(event.surveys))
     .then(ui.showAllSurveysSuccess)
     .catch(ui.showAllSurveysFailure)
 }
@@ -35,11 +35,11 @@ const onUpdateSurvey = (event) => {
   console.log(event)
   event.preventDefault()
   console.log(event.target)
-  if (event.target.id === 'true-button') {
-    console.log('selected true')
-  } else if (event.target.id === 'false-button') {
-    console.log('selected false')
-  }
+  // if (event.target.id === 'true-button') {
+  //   console.log('selected true')
+  // } else if (event.target.id === 'false-button') {
+  //   console.log('selected false')
+  // }
 
   const surveyId = event.target.dataset.id
   // const surveyId = event.target['dataset.id']
