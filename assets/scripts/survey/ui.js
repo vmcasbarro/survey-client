@@ -81,8 +81,8 @@ const showAllSurveysFailure = () => {
 const newSurveySuccess = (data) => {
   console.log(data)
   $('.reset').trigger('reset')
-  $('#display-survey-message').html('Survey created')
-  $('#display-survey-message').css('green')
+  // $('#display-survey-message').html('Survey created')
+  // $('#display-survey-message').css('green')
   showAllSurveysEvent.onShowAllSurveys()
 }
 
@@ -96,14 +96,9 @@ const updateSurveySuccess = (data) => {
   // store.survey = data.survey
   console.log(data)
   $('.reset').trigger('reset')
-<<<<<<< HEAD
-  $('#display-survey-message').html('Survey updated')
-  $('#display-survey-message').css('green')
-  showAllSurveysEvent.onShowAllSurveys()
-=======
   // $('#display-survey-message').html('Survey updated')
   // $('#display-survey-message').css('green')
->>>>>>> Made feedback for user with all actions except delete
+  showAllSurveysEvent.onShowAllSurveys()
 }
 
 const updateSurveyFailure = () => {
