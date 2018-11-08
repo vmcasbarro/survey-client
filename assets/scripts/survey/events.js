@@ -69,7 +69,7 @@ const onDeleteSurvey = (event) => {
 const onConfirmDeleteSurvey = (event) => {
   event.preventDefault()
   const deleteButton = event.target
-  $(deleteButton).html('Are you sure you want to delete? (click)')
+  $(deleteButton).html('By clicking again, you will delete this survey.')
   $(deleteButton).on('click', onDeleteSurvey)
 }
 
