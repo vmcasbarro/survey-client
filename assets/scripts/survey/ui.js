@@ -65,7 +65,7 @@ const showAllSurveysSuccess = (data) => {
   $('.survey-component').removeClass('hidden')
   $('.survey-component').html(showSurveysHtml)
 
-  $('#display-survey-message').html('All surveys shown')
+  //$('#display-survey-message').html('All surveys shown')
   $('#display-survey-message').css('black')
 }
 
@@ -77,7 +77,7 @@ const showMySurveys = () => {
   $('.survey-component').addClass('hidden')
   $('.my-surveys-component').html(showMySurveysHtml)
 
-  $('#display-survey-message').html('User created surveys shown')
+  //$('#display-survey-message').html('User created surveys shown')
   $('#display-survey-message').css('black')
 }
 
@@ -93,8 +93,6 @@ const newSurveySuccess = (data) => {
   $('.div-for-create-survey-message').fadeIn(100)
   $('.div-for-create-survey-message').fadeOut(4000)
   $('#new-survey-form').trigger('reset')
-
-
   // $('#display-survey-message').html('Survey created')
   // $('#display-survey-message').css('green')
   // showAllSurveysEvent.onShowAllSurveys()

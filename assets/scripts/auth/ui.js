@@ -7,6 +7,7 @@ $(() => {
   $('.div-for-password-message').hide() // Alfredo says: this hides the success animation (by default) 
   $('.div-for-create-survey-message').hide() // Alfredo Says: this hides the success animation (by default)
   $('.div-for-password-message-fail').hide()
+  $('#create-survey-section').hide()
 })
 
 
@@ -30,6 +31,7 @@ const signInSuccess = (response) => {
   clearForms()
   // $('#display-log-in-message').html('Sign in successful')
   // $('#display-log-in-message').css('color', 'green')
+  $('#create-survey-section').show()
   $('#sign-in-form').trigger('reset')
   $('.sign-up-log-in').addClass('hidden')
   $('#sign-up-form').addClass('hidden')
