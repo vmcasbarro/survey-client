@@ -10,7 +10,6 @@ $(() => {
   $('#create-survey-section').hide()
 })
 
-
 const signUpSuccess = () => {
   clearForms()
   $('#display-sign-up-message').html('Sign up successful')
