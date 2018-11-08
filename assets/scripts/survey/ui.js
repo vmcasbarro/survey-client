@@ -83,7 +83,7 @@ const newSurveySuccess = (data) => {
 const newSurveyFailure = () => {
   $('.reset').trigger('reset')
   $('#display-survey-message').html('Something went wrong, please try again')
-  $('#display-survey-message').css('red')
+  $('#display-survey-message').css('black')
 }
 
 const updateSurveySuccess = (data) => {
