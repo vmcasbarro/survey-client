@@ -74,6 +74,7 @@ const signOutSuccess = () => {
   $('.see-all-surveys-section').addClass('hidden')
   $('.see-my-surveys-section').addClass('hidden')
   $('#display-log-in-message').html('')
+  clearForms()
   // $('#change-password-message').html('')
   $('#navbar-at-sign-up').show(); // ALFREDO ADDED THIS. KEEP
 }
@@ -99,5 +100,6 @@ module.exports = {
   passwordChangeSuccess,
   passwordChangeFailure,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  clearForms
 }
