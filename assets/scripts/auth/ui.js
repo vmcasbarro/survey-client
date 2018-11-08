@@ -25,7 +25,6 @@ const signUpFailure = () => {
 }
 
 const signInSuccess = (response) => {
-  console.log(response.user)
   store.user = response.user
   clearForms()
   // $('#display-log-in-message').html('Sign in successful')

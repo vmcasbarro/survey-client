@@ -25,19 +25,10 @@ const showAllSurveys = () => {
 }
 
 const showOneSurvey = (surveyData) => {
-  // const surveyId = surveyData.log.id
-  // return $.ajax({
-  //   url: config.apiUrl + `/logs/${surveyId}`,
-  //   method: 'GET',
-  //   headers: {
-  //     Authorization: `Token token=${store.user.token}`
-    // }
-  // })
+
 }
 
 const updateSurvey = (surveyData, surveyId) => {
-  console.log(surveyData)
-  console.log(surveyId)
   // const surveyId = surveyData.survey._id
   return $.ajax({
     url: config.apiUrl + `/surveys/${surveyId}`,
@@ -50,7 +41,6 @@ const updateSurvey = (surveyData, surveyId) => {
 }
 
 const deleteSurvey = (surveyId) => {
-  // console.log(surveyId)
   return $.ajax({
     url: config.apiUrl + `/surveys/${surveyId}`,
     method: 'DELETE',
