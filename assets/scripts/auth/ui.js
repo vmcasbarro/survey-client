@@ -66,8 +66,8 @@ const signOutSuccess = () => {
 }
 
 const signOutFailure = () => {
-  $('#display-log-in-message').html('Something went wrong, please try again')
-  $('#display-log-in-message').css('color', 'red')
+  $('#display-survey-message').html('Something went wrong, try again')
+  $('#display-survey-message').css('color', 'red')
 }
 
 // const successAlert = () => {
