@@ -7,12 +7,16 @@ const signUpSuccess = () => {
   $('#display-sign-up-message').html('Sign up successful')
   $('#display-sign-up-message').css('color', 'green')
   $('#sign-up-form').trigger('reset')
+
+  clearForms()
 }
 
 const signUpFailure = () => {
   $('#display-sign-up-message').html('Something went wrong, please try again')
   $('#display-sign-up-message').css('color', 'red')
   $('#sign-up-form').trigger('reset')
+
+  clearForms()
 }
 
 const signInSuccess = (response) => {
@@ -28,6 +32,7 @@ const signInSuccess = (response) => {
   $('.home-menu').removeClass('hidden')
   $('.change-password-section').removeClass('hidden')
   $('.create-survey-div').removeClass('hidden')
+  clearForms()
   surveyEvents.onShowAllSurveys()
   // $('#change-password-message').html('')
 }
@@ -36,6 +41,7 @@ const signInFailure = () => {
   $('#display-log-in-message').html('Sign in failed, please try again')
   $('#display-log-in-message').css('color', 'red')
   $('#sign-in-form').trigger('reset')
+  clearForms()
 }
 
 const passwordChangeSuccess = () => {
@@ -43,12 +49,14 @@ const passwordChangeSuccess = () => {
   $('#display-survey-message').css('color', 'green')
   $('#change-password-form').trigger('reset')
   // $('#change-password-form').addClass('hidden')
+  clearForms()
 }
 
 const passwordChangeFailure = () => {
   $('#display-survey-message').html('Change Password failed, try again')
   $('#display-survey-message').css('color', 'red')
   $('#change-password-form').trigger('reset')
+  clearForms()
 }
 
 const signOutSuccess = () => {
@@ -63,26 +71,21 @@ const signOutSuccess = () => {
   $('.create-survey-div').addClass('hidden')
   $('#display-log-in-message').html('')
   // $('#change-password-message').html('')
+  clearForms()
 }
 
 const signOutFailure = () => {
   $('#display-survey-message').html('Something went wrong, try again')
   $('#display-survey-message').css('color', 'red')
+  clearForms()
 }
 
-// const successAlert = () => {
-//   $('#content').removeClass('hidden')
-//   setTimeout(() => {
-//     $('#content').addClass('hidden')
-//   }, 3000)
-// }
-//
-// const successFail = () => {
-//   $('#content-2').removeClass('hidden')
-//   setTimeout(() => {
-//     $('#content-2').addClass('hidden')
-//   }, 3000)
-// }
+const clearForms = function () {
+  $('#sign-in-form').trigger('reset')
+  $('#sign-up-form').trigger('reset')
+  $('#change-password-form').trigger('reset')
+  $('#new-survey-form').trigger('reset')
+}
 
 module.exports = {
   signUpSuccess,
