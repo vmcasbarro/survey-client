@@ -73,7 +73,6 @@ const onConfirmDeleteSurvey = (event) => {
 const onShowMySurveys = (event) => {
   event.preventDefault()
   ui.showMySurveys()
-
 }
 
 module.exports = {
