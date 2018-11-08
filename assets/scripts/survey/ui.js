@@ -83,7 +83,7 @@ const newSurveySuccess = (data) => {
   $('.reset').trigger('reset')
   // $('#display-survey-message').html('Survey created')
   // $('#display-survey-message').css('green')
-  showAllSurveysEvent.onShowAllSurveys()
+  // showAllSurveysEvent.onShowAllSurveys()
 }
 
 const newSurveyFailure = () => {
@@ -98,7 +98,7 @@ const updateSurveySuccess = (data) => {
   $('.reset').trigger('reset')
   // $('#display-survey-message').html('Survey updated')
   // $('#display-survey-message').css('green')
-  showAllSurveysEvent.onShowAllSurveys()
+  // showAllSurveysEvent.onShowAllSurveys()
 }
 
 const updateSurveyFailure = () => {
