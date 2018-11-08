@@ -101,17 +101,53 @@
 ///////////////////////////CHANGE PASSWORD SECTION/////////////////////////////////////////////////////////
 
 .change-password-section {
-  height: 10vh;
+  height: 50vh;
   margin: 5%
 }
 
-.change-password-div {
+.change-password-div,
+.div-for-password-message {
   float: left;
-  margin: 10px auto 10px 15px;
+  margin: 10px auto 10px 10px;
   height: 380px;
+  text-align: center;
 }
 
+.change-password-section input {
+  width: 300px;
+  margin-bottom: .5px;
+}
+
+
+///////////CHECKMARK ANIMATION//////////////////
+#check {
+  stroke-dasharray: 520;
+  stroke-dashoffset: 520;
+  animation: dash 0.5s ease-in forwards;
+  animation-delay: 0.3s;
+}
+
+#circle {
+  stroke-dasharray: 520;
+  stroke-dashoffset: 520;
+  animation: dash 0.3s ease-out forwards;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 520;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/////////////////////////////////////
+
+
 ///////////////////////// ANSWER SURVEYS + SEE-ALL SURVEYS SECTION /////////////////////////////////////////////////////
+
 .see-all-surveys-section {
   margin: 5%;
 }

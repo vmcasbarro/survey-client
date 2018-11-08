@@ -5,10 +5,11 @@ const showSurveysTemplate = require('../templates/surveys.handlebars')
 const showMySurveysTemplate = require('../templates/my-surveys.handlebars')
 const authUi = require('../auth/ui.js')
 
+//////////////// FOR STICKY NAVIGATION PURPOSES ////////////////////
+
 window.onscroll = function () {
   myFunction()
 };
-//////////////// FOR STICKY NAVIGATION PURPOSES ////////////////////
 var navbar = document.getElementById("navbar");
 var sticky = navbar.offsetTop;
 
@@ -19,6 +20,7 @@ function myFunction() {
     navbar.classList.remove("sticky");
   }
 }
+
 
 ////////////////////////////////////////////////////////////////////
 
@@ -49,7 +51,9 @@ const showAllSurveysSuccess = (data) => {
 
   console.log('user _id is: ', userId)
   $('.reset').trigger('reset')
-  const showSurveysHtml = showSurveysTemplate({ surveys: data.surveys })
+  const showSurveysHtml = showSurveysTemplate({
+    surveys: data.surveys
+  })
 
   $('.my-surveys-component').addClass('hidden')
   $('.survey-component').removeClass('hidden')

@@ -3,6 +3,12 @@
 const store = require('../store.js')
 const surveyEvents = require('../survey/events.js')
 
+$(() => {
+  $('.div-for-password-message').hide() // Alfredo says: this hides the animation 
+
+})
+
+
 const signUpSuccess = () => {
   clearForms()
   $('#display-sign-up-message').html('Sign up successful')
@@ -45,11 +51,13 @@ const signInFailure = () => {
 }
 
 const passwordChangeSuccess = () => {
+  $('.div-for-password-message').show()
+  $('.div-for-password-message').fadeOut(4000)
+  //$('#display-survey-message').html('Change Password successful')
+  //$('#display-survey-message').css('color', 'green')
+  // $('#change-password-form').trigger('reset')
+  // $('#change-password-form').addClass('hidden') // Alfredo says: this line was previously commented out. I commented out the others. 
   clearForms()
-  $('#display-survey-message').html('Change Password successful')
-  $('#display-survey-message').css('color', 'green')
-  $('#change-password-form').trigger('reset')
-  // $('#change-password-form').addClass('hidden')
 }
 
 const passwordChangeFailure = () => {
