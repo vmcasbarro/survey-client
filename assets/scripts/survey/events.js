@@ -64,10 +64,17 @@ const onDeleteSurvey = (event) => {
     .catch(ui.deleteSurveyFailure)
 }
 
+const onConfirmDeleteSurvey = (event) => {
+  event.preventDefault()
+  const deleteButton = event.target
+  $(deleteButton).html('Are you sure you want to delete? (click)')
+  $(deleteButton).on('click', onDeleteSurvey)
+}
+
 module.exports = {
   onNewSurvey,
   onShowAllSurveys,
   onShowOneSurvey,
   onUpdateSurvey,
-  onDeleteSurvey
+  onConfirmDeleteSurvey
 }
