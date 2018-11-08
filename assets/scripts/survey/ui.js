@@ -49,6 +49,9 @@ const showAllSurveysSuccess = (data) => {
   console.log('user _id is: ', userId)
   $('.reset').trigger('reset')
   const showSurveysHtml = showSurveysTemplate({ surveys: data.surveys })
+
+  $('.my-surveys-component').addClass('hidden')
+  $('.survey-component').removeClass('hidden')
   $('.survey-component').html(showSurveysHtml)
 }
 
@@ -56,6 +59,8 @@ const showMySurveys = () => {
   const showMySurveysHtml = showMySurveysTemplate({
     surveys: store.mySurveys
   })
+  $('.my-surveys-component').removeClass('hidden')
+  $('.survey-component').addClass('hidden')
   $('.my-surveys-component').html(showMySurveysHtml)
 }
 
