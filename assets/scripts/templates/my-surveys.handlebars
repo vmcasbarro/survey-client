@@ -1,4 +1,7 @@
 <h2>My Surveys</h2>
+{{#unless surveys}}
+  <p>no surveys yet!</p>
+{{/unless}}
 {{#each surveys as |survey|}}
   <div>
     <div class="card-header">
