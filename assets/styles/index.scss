@@ -93,7 +93,8 @@
 
 .home-menu .jumbotron {
   background: rgba(204, 204, 204, 0.7);
-  margin: 100px 10%;
+  margin: 170px 15%;
+  text-align: center;
 }
 
 
@@ -179,6 +180,40 @@ textarea {
   margin-top: 30px 5%;
 }
 
+///////////////////////////////HANDLEBARS FOR SEE-ALL////////////////////////////////////////////////////////
+
+.see-all-surveys-section {
+  margin: 5%;
+}
+
+/* ungrid.css (97 bytes minified) */
+@media (min-width: 30em) {
+  .row {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+  }
+
+  .col {
+    display: table-cell;
+  }
+}
+
+/* Demo styles */
+.col {
+  vertical-align: middle;
+  font: 300 18px/3 "Helvetica Neue", sans-serif;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.col:nth-of-type(even) {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.answer-div {}
+
+
 ///////////////////////////////////// MEDIA QUERIES //////////////////////////////////////////
 
 @media screen and (max-width: 815px) {
@@ -197,5 +232,3 @@ textarea {
     display: none;
   }
 }
-
-///////////////////////////////////////////////////////////////////////////////////////
