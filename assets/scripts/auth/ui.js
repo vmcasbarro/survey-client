@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('../store.js')
+const surveyEvents = require('../survey/events.js')
 
 const signUpSuccess = () => {
   $('#display-sign-up-message').html('Sign up successful')
@@ -26,6 +27,7 @@ const signInSuccess = (response) => {
   $('.home-menu').removeClass('hidden')
   $('.change-password-section').removeClass('hidden')
   $('.create-survey-div').removeClass('hidden')
+  surveyEvents.onShowAllSurveys()
   // $('#change-password-message').html('')
 }
 

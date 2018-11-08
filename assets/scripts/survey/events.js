@@ -15,7 +15,7 @@ const onNewSurvey = (event) => {
 }
 
 const onShowAllSurveys = (event) => {
-  event.preventDefault()
+  // event.preventDefault()
   console.log('you made it!')
   api.showAllSurveys()
     // .then(console.log(event.surveys))
