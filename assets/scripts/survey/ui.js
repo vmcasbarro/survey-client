@@ -21,6 +21,12 @@ function myFunction() {
   }
 }
 
+////////////////////// FOR ANIMATION ON SUCESS PURPOSES ///////////////////////
+$(() => {
+  $('.div-for-create-survey-message').hide() // Alfredo Says: this hides the success animation (by default)
+  $('.div-for-create-survey-message-fail').hide()
+})
+
 
 ////////////////////////////////////////////////////////////////////
 
@@ -84,13 +90,20 @@ const showAllSurveysFailure = () => {
 const newSurveySuccess = (data) => {
   console.log(data)
   $('.reset').trigger('reset')
+  $('.div-for-create-survey-message').fadeIn(100)
+  $('.div-for-create-survey-message').fadeOut(4000)
   $('#new-survey-form').trigger('reset')
+
+
   // $('#display-survey-message').html('Survey created')
   // $('#display-survey-message').css('green')
   // showAllSurveysEvent.onShowAllSurveys()
 }
 
 const newSurveyFailure = () => {
+  $('.div-for-create-survey-message-fail').fadeIn(100)
+  $('.div-for-create-survey-message-fail').fadeIn(4000)
+
   $('.reset').trigger('reset')
   $('#display-survey-message').html('Something went wrong, try again')
   $('#display-survey-message').css('black')

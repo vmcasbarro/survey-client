@@ -180,16 +180,44 @@
 
 //////////////////////CREATE SURVEY SECTION////////////////////////////////////////
 
-#create-survey-section .jumbotron {
-  background: rgba(204, 204, 204, 0.7);
-  margin: 20% 5%;
-}
 
 #create-survey-section {
   background: url(https://images.pexels.com/photos/891059/pexels-photo-891059.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)center no-repeat;
   background-attachment: fixed;
-
+  height: 115vh;
 }
+
+
+#create-survey-section .jumbotron {
+  background: rgba(244, 236, 236, 0.7);
+  margin: 5% 5%;
+}
+
+.div-for-create-survey-message,
+.div-for-create-survey-message-fail {
+  float: right;
+  margin: 10px auto 10px 10px;
+  height: 380px;
+  text-align: center;
+}
+
+.div-for-create-survey-message-fail,
+.div-for-password-message-fail {
+  color: red;
+}
+
+.div-for-password-message-fail {
+  margin: 10px auto 10px 10px;
+  height: 380px;
+  text-align: center;
+}
+
+// .create-survey-section .jumbotron {
+//   background: rgba(174, 16, 16, 0.8);
+//   margin-top: 20px;
+//   margin-bottom: -20px;
+// }
+
 
 .notes {
   background-image: -webkit-linear-gradient(white, white 30px, #ccc 30px, #ccc 31px, white 31px);
@@ -211,10 +239,6 @@ textarea {
   margin: 5% 0;
 }
 
-.create-survey-section .jumbotron {
-  background: rgba(174, 16, 16, 0.8);
-  margin-top: 30px 5%;
-}
 
 ///////////////////////////////HANDLEBARS FOR SEE-ALL////////////////////////////////////////////////////////
 
