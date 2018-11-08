@@ -58,7 +58,7 @@ const showAllSurveysFailure = () => {
 }
 
 const newSurveySuccess = (data) => {
-  store.log = data.lo
+  console.log(data)
   $('.reset').trigger('reset')
   $('#display-survey-message').html('Survey created')
   $('#display-survey-message').css('green')
