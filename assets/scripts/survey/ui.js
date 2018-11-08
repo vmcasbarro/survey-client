@@ -65,8 +65,11 @@ const showAllSurveysSuccess = (data) => {
   $('.survey-component').removeClass('hidden')
   $('.survey-component').html(showSurveysHtml)
 
-  //$('#display-survey-message').html('All surveys shown')
+  // $('#display-survey-message').html('All surveys shown')
   $('#display-survey-message').css('black')
+  $('html, body').animate({
+    scrollTop: ($('#see-all-surveys-section').offset().top)
+  }, 500)
 }
 
 const showMySurveys = () => {
@@ -79,6 +82,9 @@ const showMySurveys = () => {
 
   //$('#display-survey-message').html('User created surveys shown')
   $('#display-survey-message').css('black')
+  $('html, body').animate({
+    scrollTop: ($('#see-my-surveys-section').offset().top)
+  }, 500)
 }
 
 const showAllSurveysFailure = () => {

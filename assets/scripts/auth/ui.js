@@ -4,12 +4,11 @@ const store = require('../store.js')
 const surveyEvents = require('../survey/events.js')
 
 $(() => {
-  $('.div-for-password-message').hide() // Alfredo says: this hides the success animation (by default) 
+  $('.div-for-password-message').hide() // Alfredo says: this hides the success animation (by default)
   $('.div-for-create-survey-message').hide() // Alfredo Says: this hides the success animation (by default)
   $('.div-for-password-message-fail').hide()
   $('#create-survey-section').hide()
 })
-
 
 const signUpSuccess = () => {
   clearForms()
@@ -59,11 +58,12 @@ const passwordChangeSuccess = () => {
   //$('#display-survey-message').html('Change Password successful')
   //$('#display-survey-message').css('color', 'green')
   // $('#change-password-form').trigger('reset')
-  // $('#change-password-form').addClass('hidden') // Alfredo says: this line was previously commented out. I commented out the others. 
+  // $('#change-password-form').addClass('hidden') // Alfredo says: this line was previously commented out. I commented out the others.
   clearForms()
 }
 
 const passwordChangeFailure = () => {
+  clearForms()
   $('#change-password-form').trigger('reset')
   $('.div-for-password-message-fail').show()
   // clearForms()
@@ -83,7 +83,7 @@ const signOutSuccess = () => {
   $('.navbar').addClass('hidden')
   $('.home-menu').addClass('hidden')
   $('.change-password-section').addClass('hidden')
-  $('.create-survey-div').addClass('hidden')
+  $('#create-survey-section').addClass('hidden')
   $('.see-all-surveys-section').addClass('hidden')
   $('.see-my-surveys-section').addClass('hidden')
   $('#display-log-in-message').html('')
