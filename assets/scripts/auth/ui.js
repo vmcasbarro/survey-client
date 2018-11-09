@@ -15,6 +15,8 @@ const signUpSuccess = () => {
   $('#display-sign-up-message').html('Sign up successful')
   $('#display-sign-up-message').css('color', 'green')
   $('#sign-up-form').trigger('reset')
+  $('#display-sign-in-message').html('')
+  $('#display-log-in-message').html('')
 }
 
 const signUpFailure = () => {
@@ -22,6 +24,8 @@ const signUpFailure = () => {
   $('#display-sign-up-message').html('Something went wrong, please try again')
   $('#display-sign-up-message').css('color', 'red')
   $('#sign-up-form').trigger('reset')
+  $('#display-sign-in-message').html('')
+  $('#display-log-in-message').html('')
 }
 
 const signInSuccess = (response) => {
@@ -42,6 +46,8 @@ const signInSuccess = (response) => {
 
   $('.see-all-surveys-section').removeClass('hidden')
   $('.see-my-surveys-section').removeClass('hidden')
+  $('#display-sign-up-message').html('')
+
   surveyEvents.onShowAllSurveys()
   // $('#change-password-message').html('')
 }
@@ -51,6 +57,7 @@ const signInFailure = () => {
   $('#display-log-in-message').html('Sign in failed, please try again')
   $('#display-log-in-message').css('color', 'red')
   $('#sign-in-form').trigger('reset')
+  $('#display-sign-up-message').html('')
 }
 
 const passwordChangeSuccess = () => {
