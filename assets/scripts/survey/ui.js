@@ -43,7 +43,6 @@ $(() => {
 // }
 
 const showAllSurveysSuccess = (data) => {
-  console.log('all the surveys in the database: \n', data)
   const allSurveys = data
   const userId = store.user._id
 
@@ -53,9 +52,6 @@ const showAllSurveysSuccess = (data) => {
 
   store.mySurveys = allMySurveys
 
-  console.log('my surveys: ', allMySurveys)
-
-  console.log('user _id is: ', userId)
   $('.reset').trigger('reset')
   const showSurveysHtml = showSurveysTemplate({
     surveys: data.surveys
@@ -73,7 +69,6 @@ const showAllSurveysSuccess = (data) => {
 }
 
 const showAllSurveysSuccessButStay = (data) => {
-  console.log('all the surveys in the database: \n', data)
   const allSurveys = data
   const userId = store.user._id
 
@@ -83,9 +78,6 @@ const showAllSurveysSuccessButStay = (data) => {
 
   store.mySurveys = allMySurveys
 
-  console.log('my surveys: ', allMySurveys)
-
-  console.log('user _id is: ', userId)
   $('.reset').trigger('reset')
   const showSurveysHtml = showSurveysTemplate({
     surveys: data.surveys
@@ -123,7 +115,6 @@ const showAllSurveysFailure = () => {
 }
 
 const newSurveySuccess = (data) => {
-  console.log(data)
   $('.reset').trigger('reset')
   $('.div-for-create-survey-message').fadeIn(100)
   $('.div-for-create-survey-message').fadeOut(4000)
@@ -143,12 +134,7 @@ const newSurveyFailure = () => {
 }
 
 const updateSurveySuccess = (data) => {
-  // store.survey = data.survey
-  console.log(data)
   $('.reset').trigger('reset')
-  // $('#display-survey-message').html('Survey updated')
-  // $('#display-survey-message').css('green')
-  // showAllSurveysEvent.onShowAllSurveys()
 }
 
 const updateSurveyFailure = () => {
@@ -159,35 +145,19 @@ const updateSurveyFailure = () => {
 
 const deleteSurveySuccess = () => {
   $('.reset').trigger('reset')
-  console.log('successfully deleted survey!')
   // $('#display-survey-message').html('Survey removed')
   // $('#display-survey-message').css('green')
 }
 
 const deleteSurveyFailure = () => {
   $('.reset').trigger('reset')
-  console.log('did not delete the survey!')
-  // $('#display-survey-message').html('Something went wrong, please try again')
-  // $('#display-survey-message').css('red')
+
 }
 
-// const successAlert = () => {
-//   $('#content').removeClass('hidden')
-//   setTimeout(() => {
-//     $('#content').addClass('hidden')
-//   }, 3000)
-// }
-//
-// const successFail = () => {
-//   $('#content-2').removeClass('hidden')
-//   setTimeout(() => {
-//     $('#content-2').addClass('hidden')
-//   }, 3000)
-// }
+
 
 module.exports = {
-  // showOneSurveySuccess,
-  // showOneSurveyFailure,
+
   showAllSurveysSuccess,
   showMySurveys,
   showAllSurveysFailure,

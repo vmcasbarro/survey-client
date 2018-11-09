@@ -7,7 +7,7 @@ $(() => {
   $('.div-for-password-message').hide() // Alfredo says: this hides the success animation (by default)
   $('.div-for-create-survey-message').hide() // Alfredo Says: this hides the success animation (by default)
   $('.div-for-password-message-fail').hide()
-  $('#create-survey-section').hide()
+  // $('#create-survey-section').hide()
 })
 
 const signUpSuccess = () => {
@@ -25,12 +25,11 @@ const signUpFailure = () => {
 }
 
 const signInSuccess = (response) => {
-  console.log(response.user)
   store.user = response.user
   clearForms()
   // $('#display-log-in-message').html('Sign in successful')
   // $('#display-log-in-message').css('color', 'green')
-  $('#create-survey-section').show()
+  // $('#create-survey-section').show()
   $('#sign-in-form').trigger('reset')
   $('.sign-up-log-in').addClass('hidden')
   $('#sign-up-form').addClass('hidden')
@@ -38,7 +37,9 @@ const signInSuccess = (response) => {
   $('.navbar').removeClass('hidden')
   $('.home-menu').removeClass('hidden')
   $('.change-password-section').removeClass('hidden')
-  $('.create-survey-div').removeClass('hidden')
+  // $('.create-survey-div').removeClass('hidden')
+  $('#create-survey-section').removeClass('hidden')
+
   $('.see-all-surveys-section').removeClass('hidden')
   $('.see-my-surveys-section').removeClass('hidden')
   surveyEvents.onShowAllSurveys()
@@ -84,6 +85,8 @@ const signOutSuccess = () => {
   $('.home-menu').addClass('hidden')
   $('.change-password-section').addClass('hidden')
   $('#create-survey-section').addClass('hidden')
+  // $('.create-survey-div').addClass('hidden')
+
   $('.see-all-surveys-section').addClass('hidden')
   $('.see-my-surveys-section').addClass('hidden')
   $('#display-log-in-message').html('')
