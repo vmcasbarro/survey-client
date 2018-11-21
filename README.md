@@ -1,5 +1,12 @@
 [![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
+Back-end deployed: https://safe-fortress-24972.herokuapp.com/ <br>
+Front-end deployed: https://vmcasbarro.github.io/survey-client/ <br>
+Back-end repo: https://github.com/vmcasbarro/survey-api <br>
+Front-end repo: https://github.com/vmcasbarro/survey-client
+
+This was initially a group project that was completed over a span of 3 days. I was really excited about the project, so I decided to continue to add on to it on my own. Below is the initial deployment information if you want to compare!
+
 Back-end: https://blooming-springs-16841.herokuapp.com <br>
 Front-end: https://lost-horizon.github.io/best-survey-client/ <br>
 Back-end repo: https://github.com/Lost-Horizon/best-survey-api <br>
