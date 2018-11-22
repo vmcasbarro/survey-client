@@ -34,6 +34,6 @@ $(() => {
   $('#see-my-surveys-section').on('click', '#delete-button', surveyEvents.onConfirmDeleteSurvey)
 
   // Survey Events within Handlebars
-  $('#surveys-matrix').on('click', '#answer-one', surveyEvents.onUpdateSurvey)
-  $('#surveys-matrix').on('click', '#answer-two', surveyEvents.onUpdateSurvey)
+  $('#surveys-matrix').on('click', '.answer-one', surveyEvents.onUpdateSurvey)
+  $('#surveys-matrix').on('click', '.answer-two', surveyEvents.onUpdateSurvey)
 })

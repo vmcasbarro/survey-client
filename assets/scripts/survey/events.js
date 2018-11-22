@@ -37,7 +37,8 @@ const onShowOneSurvey = (event) => {
 
 const onUpdateSurvey = (event) => {
   event.preventDefault()
-  const surveyId = event.target.dataset.id
+  const parents = $(event.target).parents('div')
+  const surveyId = parents[0].dataset.id
   // const surveyId = event.target['dataset.id']
 
   const surveyData = {
@@ -46,8 +47,8 @@ const onUpdateSurvey = (event) => {
     }
   }
   api.updateSurvey(surveyData, surveyId)
-    .then(ui.updateSurveySuccess)
-    .then(onShowAllSurveys)
+    .then(() => ui.updateSurveySuccess(surveyId))
+    // .then(onShowAllSurveys)
     .catch(ui.updateSurveyFailure)
 }
 

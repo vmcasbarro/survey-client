@@ -88,11 +88,14 @@ const newSurveyFailure = () => {
 }
 
 const updateSurveySuccess = (data) => {
-  $('.reset').trigger('reset')
+  console.log('data', data)
+  $(`[data-id=${data}] > .survey-stats`).removeClass('hidden')
+  $(`[data-id=${data}] > .list-group`).addClass('hidden')
+  // $('.survey-response').addClass('hidden')
+  // $('.survey-stats').removeClass('hidden')
 }
 
 const updateSurveyFailure = () => {
-  $('.reset').trigger('reset')
   // $('#display-survey-message').html('Something went wrong, please try again')
   // $('#display-survey-message').css('red')
 }

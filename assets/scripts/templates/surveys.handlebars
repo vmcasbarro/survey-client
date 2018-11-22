@@ -1,16 +1,19 @@
 
 {{#each surveys as |survey|}}
-  <div class="card m-1" style="width: 18rem;">
+  <div data-id="{{survey._id}}" class="card m-1" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">{{survey.question}}</h5>
       <p class="card-text">Asked at: {{survey.location}}</p>
     </div>
+    <div class="card-body survey-stats hidden">
+      <p class="card-text">response stats will go here</p>
+    </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">
-        <button id="answer-one" data-id="{{survey._id}}" class="btn btn-block btn-outline-dark" value="yes" type="submit">yes</button>
+        <button class="btn btn-block btn-outline-dark answer-one" value="yes" type="submit">yes</button>
       </li>
       <li class="list-group-item">
-        <button id="answer-two" data-id="{{survey._id}}" class="btn btn-block btn-outline-dark" value="no" type="submit">no</button>
+        <button class="btn btn-block btn-outline-dark answer-two" value="no" type="submit">no</button>
       </li>
     </ul>
     <div class="card-body align-self-center">
