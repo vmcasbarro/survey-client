@@ -17,7 +17,8 @@ $(() => {
   $('#sign-out').on('click', authEvents.onSignOut)
 
   // Survey events
-  $('#new-survey-form').on('submit', surveyEvents.onNewSurvey)
+  $('#create-survey-form').on('submit', surveyEvents.onNewSurvey)
+
   $('#update-survey-form').on('submit', surveyEvents.onUpdateSurvey)
   $('#delete-survey-button').on('submit', surveyEvents.onDestroySurvey)
   $('#show-survey-button').on('submit', surveyEvents.onShowOneSurvey)
