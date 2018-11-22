@@ -15,9 +15,10 @@
 
 <body>
 
+  <!-- NAV BAR -->
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
+  <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Anything but Trivial!</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -27,31 +28,194 @@
         <li class="nav-item active">
           <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
+      <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="sign-up-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          sign up
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="sign-up-dropdown">
+          <form class="dropdown-item">
+            <input class="form-control mr-sm-2" type="text" placeholder="email" aria-label="email">
+            <input class="form-control mr-sm-2" type="password" placeholder="password" aria-label="password">
+            <input class="form-control mr-sm-2" type="password" placeholder="confirm password" aria-label="confirm password">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">sign up</button>
+          </form>
+        </div>
+      </div>
+      <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="sign-in-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          sign in
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="sign-in-dropdown">
+          <form class="dropdown-item">
+            <input class="form-control mr-sm-2" type="text" placeholder="email" aria-label="email">
+            <input class="form-control mr-sm-2" type="password" placeholder="password" aria-label="password">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">sign in</button>
+          </form>
+        </div>
+      </div>
     </div>
   </nav>
 
+  <!-- create a new survey -->
+  <div class="container py-3">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form class="">
+          <input class="form-control mr-sm-2" type="text" placeholder="question" aria-label="question">
+          <input class="form-control mr-sm-2" type="text" placeholder="asked at" aria-label="asked at">
+          <button class="btn btn-block btn-primary my-2 my-sm-0" type="submit">add question</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- user's surveys matrix -->
+  <div class="container py-3 hidden">
+    <div class="row justify-content-center">
+
+      <div class="card m-1" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">How long does it take light from the Sun to reach Earth?</h5>
+          <p class="card-text">Asked at: The Thirsty Scholar</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <button class="btn btn-block btn-outline-dark" type="submit">Answer A</button>
+          </li>
+          <li class="list-group-item">
+            <button class="btn btn-block btn-outline-dark" type="submit">Answer B</button>
+          </li>
+          <li class="list-group-item">
+            <button class="btn btn-block btn-outline-dark" type="submit">Answer C</button>
+
+          </li>
+        </ul>
+        <div class="card-body align-self-center">
+          <p class="card-text">Submitted by jasper</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- survey card matrix -->
+  <div class="container py-3 mb-5">
+    <div class="row justify-content-center">
+
+      <div class="card m-1" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">How long does it take light from the Sun to reach Earth?</h5>
+          <p class="card-text">Asked at: The Thirsty Scholar</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <button class="btn btn-block btn-outline-dark" type="submit">Answer A</button>
+          </li>
+          <li class="list-group-item">
+            <button class="btn btn-block btn-outline-dark" type="submit">Answer B</button>
+          </li>
+          <li class="list-group-item">
+            <button class="btn btn-block btn-outline-dark" type="submit">Answer C</button>
+
+          </li>
+        </ul>
+        <div class="card-body align-self-center">
+          <p class="card-text">Submitted by jasper</p>
+        </div>
+      </div>
+
+      <div class="card m-1" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+
+      <div class="card m-1" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+
+      <div class="card m-1" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+
+      <div class="card m-1" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+
+      <div class="card m-1" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <!-- footer -->
+  <nav class="navbar fixed-bottom navbar-light bg-light pt-1">
+    <a class="navbar-brand" href="#"></a>
+    <span class="navbar-text font-weight-light text-dark">
+      Designed and coded with ❤️ by <a href="#">Vince Casbarro</a>
+    </span>
+  </nav>
 
 </body>
 
