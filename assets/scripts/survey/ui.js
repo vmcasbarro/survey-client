@@ -5,8 +5,6 @@ const showSurveysTemplate = require('../templates/surveys.handlebars')
 const showMySurveysTemplate = require('../templates/my-surveys.handlebars')
 const authUi = require('../auth/ui.js')
 
-
-
 const showAllSurveysSuccess = (data) => {
   const allSurveys = data
   const userId = store.user._id
@@ -22,12 +20,6 @@ const showAllSurveysSuccess = (data) => {
   })
 
   $('#surveys-matrix').html(showSurveysHtml)
-
-  // $('#display-survey-message').html('All surveys shown')
-  $('#display-survey-message').css('black')
-  $('html, body').animate({
-    scrollTop: ($('#see-all-surveys-section').offset().top)
-  }, 500)
 }
 
 const showAllSurveysSuccessButStay = (data) => {
