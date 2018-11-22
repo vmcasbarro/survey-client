@@ -91,8 +91,6 @@ const updateSurveySuccess = (data) => {
   console.log('data', data)
   $(`[data-id=${data}] > .survey-stats`).removeClass('hidden')
   $(`[data-id=${data}] > .list-group`).addClass('hidden')
-  // $('.survey-response').addClass('hidden')
-  // $('.survey-stats').removeClass('hidden')
 }
 
 const updateSurveyFailure = () => {

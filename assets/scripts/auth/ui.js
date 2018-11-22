@@ -26,9 +26,9 @@ const signInSuccess = (response) => {
   $('.sign-up-and-in').addClass('hidden')
   $('.change-pwd-and-log-out').removeClass('hidden')
   $('#notification')
-  .html('Sign in successful')
-  .css('color', 'green')
-  .fadeOut(4000)
+    .html('Sign in successful')
+    .css('color', 'green')
+    .fadeOut(4000)
   $('#survey-form-row').removeClass('hidden')
   $('#survey-form-placeholder').addClass('hidden')
 
