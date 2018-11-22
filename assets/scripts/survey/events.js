@@ -47,7 +47,7 @@ const onUpdateSurvey = (event) => {
   }
   api.updateSurvey(surveyData, surveyId)
     .then(ui.updateSurveySuccess)
-    .then(onShowAllSurveysButStay)
+    .then(onShowAllSurveys)
     .catch(ui.updateSurveyFailure)
 }
 
