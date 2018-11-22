@@ -21,6 +21,7 @@ const signUpFailure = () => {
 
 const signInSuccess = (response) => {
   store.user = response.user
+  console.log(store.user)
   clearForms()
   $('.sign-up-and-in').addClass('hidden')
   $('.change-pwd-and-log-out').removeClass('hidden')

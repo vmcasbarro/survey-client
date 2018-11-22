@@ -17,14 +17,11 @@ const showAllSurveysSuccess = (data) => {
 
   store.mySurveys = allMySurveys
 
-  $('.reset').trigger('reset')
   const showSurveysHtml = showSurveysTemplate({
     surveys: data.surveys
   })
 
-  $('.my-surveys-component').addClass('hidden')
-  $('.survey-component').removeClass('hidden')
-  $('.survey-component').html(showSurveysHtml)
+  $('#surveys-matrix').html(showSurveysHtml)
 
   // $('#display-survey-message').html('All surveys shown')
   $('#display-survey-message').css('black')
