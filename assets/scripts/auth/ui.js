@@ -20,15 +20,12 @@ const signUpFailure = () => {
 const signInSuccess = (response) => {
   store.user = response.user
   clearForms()
-  $('#sign-in-form').trigger('reset')
   $('.sign-up-log-in').addClass('hidden')
-  $('#sign-up-form').addClass('hidden')
-  $('#sign-in-form').addClass('hidden')
+
   $('.navbar').removeClass('hidden')
   $('.home-menu').removeClass('hidden')
   $('.change-password-section').removeClass('hidden')
   $('#create-survey-section').removeClass('hidden')
-
   $('.see-all-surveys-section').removeClass('hidden')
   $('.see-my-surveys-section').removeClass('hidden')
   $('#display-sign-up-message').html('')
@@ -41,29 +38,25 @@ const signInFailure = () => {
   $('#display-log-in-message')
     .html('Sign in failed, please try again')
     .css('color', 'red')
-  $('#sign-in-form').trigger('reset')
-  $('#display-sign-up-message').html('')
 }
 
 const passwordChangeSuccess = () => {
-  $('.div-for-password-message').show()
-  $('.div-for-password-message').fadeOut(4000)
+  // need to add validation here
+  // $('.div-for-password-message').show()
+  // $('.div-for-password-message').fadeOut(4000)
   clearForms()
 }
 
 const passwordChangeFailure = () => {
   clearForms()
-  $('#change-password-form').trigger('reset')
-  $('.div-for-password-message-fail').show()
-  $('.div-for-password-message-fail').show()
-  $('.div-for-password-message-fail').fadeOut(4000)
+  // need to add validation here
 }
 
 const signOutSuccess = () => {
   clearForms()
   $('.sign-up-log-in').removeClass('hidden')
-  $('#sign-up-form').removeClass('hidden')
-  $('#sign-in-form').removeClass('hidden')
+
+  // either hide these using a wrapper *or* come up with a better way to display log-in screen
   $('.navbar').addClass('hidden')
   $('.home-menu').addClass('hidden')
   $('.change-password-section').addClass('hidden')
@@ -84,6 +77,7 @@ const clearForms = function () {
   $('#change-password-form').trigger('reset')
   $('#new-survey-form').trigger('reset')
   $('#display-sign-up-message').empty()
+  $('#display-log-in-message').empty()
 }
 
 module.exports = {
