@@ -80,22 +80,25 @@ const showAllSurveysFailure = () => {
 }
 
 const newSurveySuccess = (data) => {
-  $('.reset').trigger('reset')
-  $('.div-for-create-survey-message').fadeIn(100)
-  $('.div-for-create-survey-message').fadeOut(4000)
-  $('#new-survey-form').trigger('reset')
+  $('#create-survey-form').trigger('reset')
+  $('#notification')
+    .fadeIn(1)
+    .html('question added!')
+    .css('color', 'green')
+    .fadeOut(4000)
+
   // $('#display-survey-message').html('Survey created')
   // $('#display-survey-message').css('green')
   // showAllSurveysEvent.onShowAllSurveys()
 }
 
 const newSurveyFailure = () => {
-  $('.div-for-create-survey-message-fail').fadeIn(100)
-  $('.div-for-create-survey-message-fail').fadeIn(4000)
-
-  $('.reset').trigger('reset')
-  $('#display-survey-message').html('Something went wrong, try again')
-  $('#display-survey-message').css('black')
+  $('#create-survey-form').trigger('reset')
+  $('#notification')
+    .fadeIn(1)
+    .html("question wasn't added. Check your internet connection.")
+    .css('color', 'red')
+    .fadeOut(4000)
 }
 
 const updateSurveySuccess = (data) => {
