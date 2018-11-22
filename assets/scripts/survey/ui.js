@@ -5,42 +5,7 @@ const showSurveysTemplate = require('../templates/surveys.handlebars')
 const showMySurveysTemplate = require('../templates/my-surveys.handlebars')
 const authUi = require('../auth/ui.js')
 
-//////////////// FOR STICKY NAVIGATION PURPOSES ////////////////////
 
-window.onscroll = function () {
-  myFunction()
-};
-var navbar = document.getElementById("navbar");
-var sticky = navbar.offsetTop;
-
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
-}
-
-////////////////////// FOR ANIMATION ON SUCESS PURPOSES ///////////////////////
-$(() => {
-  $('.div-for-create-survey-message').hide() // Alfredo Says: this hides the success animation (by default)
-  $('.div-for-create-survey-message-fail').hide()
-})
-
-
-////////////////////////////////////////////////////////////////////
-
-// const showOneSurveySuccess = (response) => {
-//   $('.reset').trigger('reset')
-//   $('#display-survey-message').html('Survey displayed')
-//   $('#display-survey-message').css('green')
-// }
-//
-// const showOneSurveyFailure = () => {
-//   $('.reset').trigger('reset')
-//   $('#display-survey-message').html('Something went wrong, please try again')
-//   $('#display-survey-message').css('red')
-// }
 
 const showAllSurveysSuccess = (data) => {
   const allSurveys = data
