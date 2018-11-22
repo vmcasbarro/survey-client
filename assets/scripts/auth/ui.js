@@ -5,21 +5,31 @@ const surveyEvents = require('../survey/events.js')
 
 const signUpSuccess = () => {
   clearForms()
-  $('#display-sign-up-message')
+  $('#notification')
     .html('Sign up successful')
     .css('color', 'green')
+    .fadeOut(4000)
 }
 
 const signUpFailure = () => {
   clearForms()
-  $('#display-sign-up-message')
-    .html('Something went wrong, please try again')
+  $('#notification')
+    .html('Sign up error')
     .css('color', 'red')
+    .fadeOut(4000)
 }
 
 const signInSuccess = (response) => {
   store.user = response.user
   clearForms()
+  $('.sign-up-and-in').addClass('hidden')
+  $('.change-pwd-and-log-out').removeClass('hidden')
+  $('#notification')
+  .html('Sign in successful')
+  .css('color', 'green')
+  .fadeOut(4000)
+
+
   $('.sign-up-log-in').addClass('hidden')
 
   $('.navbar').removeClass('hidden')
@@ -35,29 +45,34 @@ const signInSuccess = (response) => {
 
 const signInFailure = () => {
   clearForms()
-  $('#display-log-in-message')
-    .html('Sign in failed, please try again')
+  $('#notification')
+    .html('Sign in error')
     .css('color', 'red')
+    .fadeOut(4000)
 }
 
 const passwordChangeSuccess = () => {
-  // need to add validation here
-  // $('.div-for-password-message').show()
-  // $('.div-for-password-message').fadeOut(4000)
   clearForms()
+  $('#notification')
+    .html('password changed')
+    .css('color', 'green')
+    .fadeOut(4000)
 }
 
 const passwordChangeFailure = () => {
   clearForms()
-  // need to add validation here
+  $('#notification')
+    .html('password change error')
+    .css('color', 'red')
+    .fadeOut(4000)
 }
 
 const signOutSuccess = () => {
   clearForms()
-  $('.sign-up-log-in').removeClass('hidden')
+  $('.sign-up-and-in').removeClass('hidden')
+  $('.change-pwd-and-log-out').addClass('hidden')
 
   // either hide these using a wrapper *or* come up with a better way to display log-in screen
-  $('.navbar').addClass('hidden')
   $('.home-menu').addClass('hidden')
   $('.change-password-section').addClass('hidden')
   $('#create-survey-section').addClass('hidden')
@@ -72,12 +87,12 @@ const signOutFailure = () => {
 }
 
 const clearForms = function () {
-  $('#sign-in-form').trigger('reset')
   $('#sign-up-form').trigger('reset')
+  $('#sign-in-form').trigger('reset')
   $('#change-password-form').trigger('reset')
-  $('#new-survey-form').trigger('reset')
-  $('#display-sign-up-message').empty()
-  $('#display-log-in-message').empty()
+  $('#create-survey-form').trigger('reset')
+  $('#notification').html('')
+  $('#notification').fadeIn(1)
 }
 
 module.exports = {

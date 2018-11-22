@@ -29,9 +29,11 @@
           <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
       </ul>
+      <div id="notification" class="">
+      </div>
 
       <!-- SIGN UP -->
-      <div class="nav-item dropdown">
+      <div class="nav-item dropdown sign-up-and-in">
         <a class="nav-link dropdown-toggle" href="#" id="sign-up-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           sign up
         </a>
@@ -46,7 +48,7 @@
       </div>
 
       <!-- SIGN IN -->
-      <div class="nav-item dropdown">
+      <div class="nav-item dropdown sign-up-and-in">
         <a class="nav-link dropdown-toggle" href="#" id="sign-in-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           sign in
         </a>
@@ -62,7 +64,7 @@
       <!-- hidden until successful log in -->
 
       <!-- CHANGE PASSWORD -->
-      <div class="nav-item dropdown hidden">
+      <div class="nav-item dropdown change-pwd-and-log-out hidden">
         <a class="nav-link dropdown-toggle" href="#" id="change-password-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           change password
         </a>
@@ -76,7 +78,7 @@
       </div>
 
       <!-- SIGN OUT -->
-      <button class="btn btn-outline-secondary my-2 my-sm-0 hidden" type="submit">sign out</button>
+      <button id="sign-out" class="btn btn-outline-secondary my-2 my-sm-0 change-pwd-and-log-out hidden" type="submit">sign out</button>
     </div>
 
   </nav>
