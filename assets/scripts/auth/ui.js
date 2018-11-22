@@ -28,6 +28,8 @@ const signInSuccess = (response) => {
   .html('Sign in successful')
   .css('color', 'green')
   .fadeOut(4000)
+  $('#survey-form-row').removeClass('hidden')
+  $('#survey-form-placeholder').addClass('hidden')
 
 
   $('.sign-up-log-in').addClass('hidden')
@@ -71,6 +73,8 @@ const signOutSuccess = () => {
   clearForms()
   $('.sign-up-and-in').removeClass('hidden')
   $('.change-pwd-and-log-out').addClass('hidden')
+  $('#survey-form-row').addClass('hidden')
+  $('#survey-form-placeholder').removeClass('hidden')
 
   // either hide these using a wrapper *or* come up with a better way to display log-in screen
   $('.home-menu').addClass('hidden')

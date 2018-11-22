@@ -80,12 +80,16 @@
       <!-- SIGN OUT -->
       <button id="sign-out" class="btn btn-outline-secondary my-2 my-sm-0 change-pwd-and-log-out hidden" type="submit">sign out</button>
     </div>
-
   </nav>
 
   <!-- create a new survey -->
-  <div class="container py-3">
-    <div class="row justify-content-center">
+  <div class="container pt-4">
+    <div id="survey-form-placeholder" class="row justify-content-center">
+      <div class="alert alert-primary fade show" role="alert">
+        Sign in to add a question.
+      </div>
+    </div>
+    <div id="survey-form-row" class="row justify-content-center pb-2 hidden">
       <div class="col-md-6">
         <form id="create-survey-form" class="">
           <input class="form-control mr-sm-2" type="text" placeholder="question" aria-label="question">
@@ -126,7 +130,7 @@
 
 
   <!-- survey card matrix -->
-  <div class="container py-3 mb-5">
+  <div class="container pt-2 pb-3 mb-5">
     <div class="row justify-content-center">
 
       <div class="card m-1" style="width: 18rem;">
