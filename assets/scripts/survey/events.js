@@ -46,6 +46,8 @@ const onShowSurvey = () => {
       store.updatedSurvey = response.survey
       console.log(store.updatedSurvey)
     })
+    .then(ui.showSurveyStatsSuccess)
+    .catch(ui.showSurveyStatsFailure)
 }
 
 const onUpdateSurvey = (event) => {
@@ -63,7 +65,6 @@ const onUpdateSurvey = (event) => {
     // get the survey that was just updated
     .then(onShowSurvey)
     .then(ui.updateSurveySuccess)
-    // .then(onShowAllSurveys)
     .catch(ui.updateSurveyFailure)
 }
 

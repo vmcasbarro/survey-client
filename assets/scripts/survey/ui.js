@@ -92,9 +92,14 @@ const updateSurveySuccess = () => {
   $(`[data-id=${store.surveyId}] > .list-group`).addClass('hidden')
 }
 
+
 const updateSurveyFailure = () => {
-  // $('#display-survey-message').html('Something went wrong, please try again')
-  // $('#display-survey-message').css('red')
+  $('#create-survey-form').trigger('reset')
+  $('#notification')
+    .fadeIn(1)
+    .html("Something went wrong. Check your internet connection.")
+    .css('color', 'red')
+    .fadeOut(4000)
 }
 
 // const deleteSurveySuccess = () => {
@@ -107,7 +112,18 @@ const updateSurveyFailure = () => {
 //   $('.reset').trigger('reset')
 // }
 
+const showSurveyStatsSuccess = () => {
+  console.log('made it!', store.updatedSurvey)
+}
 
+const showSurveyStatsFailure = () => {
+  $('#create-survey-form').trigger('reset')
+  $('#notification')
+    .fadeIn(1)
+    .html("Something went wrong. Check your internet connection.")
+    .css('color', 'red')
+    .fadeOut(4000)
+}
 
 module.exports = {
 
@@ -117,7 +133,9 @@ module.exports = {
   newSurveySuccess,
   newSurveyFailure,
   updateSurveySuccess,
-  updateSurveyFailure
+  updateSurveyFailure,
+  showSurveyStatsSuccess,
+  showSurveyStatsFailure
   // deleteSurveySuccess,
   // deleteSurveyFailure,
   // showAllSurveysSuccessButStay
