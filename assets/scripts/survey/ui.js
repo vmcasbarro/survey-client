@@ -119,8 +119,6 @@ const showSurveyStatsSuccess = () => {
   const noResponses = responses.filter(function (response) {
     return response.answer === 'no'
   })
-  console.log('yes: ', yesResponses.length)
-  console.log('no: ', noResponses.length)
   $(`[data-id=${store.surveyId}] > .survey-stats`).html(
     `<p>yes: ${yesResponses.length}</p>
     <p>no: ${noResponses.length}</p>`
