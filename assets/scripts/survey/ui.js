@@ -1,5 +1,7 @@
 'use strict'
 
+import Chart from 'chart.js'
+
 const store = require('../store.js')
 const showSurveysTemplate = require('../templates/surveys.handlebars')
 const showMySurveysTemplate = require('../templates/my-surveys.handlebars')
@@ -119,10 +121,43 @@ const showSurveyStatsSuccess = () => {
   const noResponses = responses.filter(function (response) {
     return response.answer === 'no'
   })
-  $(`[data-id=${store.surveyId}] > .survey-stats`).html(
-    `<p>yes: ${yesResponses.length}</p>
-    <p>no: ${noResponses.length}</p>`
-  )
+  // $(`[data-id=${store.surveyId}] > .survey-stats`).html(
+  //   `<p>yes: ${yesResponses.length}</p>
+  //   <p>no: ${noResponses.length}</p>`
+  // )
+
+  console.log($(`[data-id=${store.surveyId}]`).find('.chart-container'))
+
+  var ctx = $(`[data-id=${store.surveyId}]`).find("canvas")
+  console.log(ctx)
+  var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['yes', 'no'],
+        datasets: [{
+            label: 'responses',
+            data: [yesResponses.length, noResponses.length],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
 }
 
 const showSurveyStatsFailure = () => {
