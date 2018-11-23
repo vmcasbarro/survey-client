@@ -43,9 +43,7 @@
       <p class="card-text">Asked at: {{survey.location}}</p>
     </div>
     <div class="card-body survey-stats pb-0 hidden">
-      <div class="chart-container" style="height:150px; width:246px">
-        <canvas class="the-chart"></canvas>
-      </div>
+        <canvas class="the-chart" width="400" height="400"></canvas>
     </div>
     <ul class="list-group list-group-flush">
       {{#each survey.answers as |answer|}}
