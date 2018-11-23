@@ -24,7 +24,7 @@ $(() => {
   $('#delete-survey-button').on('submit', surveyEvents.onDestroySurvey)
   $('#show-survey-button').on('submit', surveyEvents.onShowOneSurvey)
   $('#show-all-surveys').on('click', surveyEvents.onShowAllSurveys)
-  $('#show-create-form').on('click', surveyUI.showCreateSurveyForm)
+  $('#create-form-shower').on('click', surveyUI.showCreateSurveyForm)
 
 
   // My survey events

@@ -77,6 +77,8 @@ const signOutSuccess = () => {
   $('.change-pwd-and-log-out').addClass('hidden')
   $('#survey-form-row').addClass('hidden')
   $('#survey-form-placeholder').removeClass('hidden')
+  $('#survey-form-gateway').addClass('hidden')
+  $('#create-survey-form-card').addClass('hidden')
 
   // either hide these using a wrapper *or* come up with a better way to display log-in screen
   $('.home-menu').addClass('hidden')

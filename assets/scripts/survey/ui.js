@@ -73,7 +73,7 @@ const showAllSurveysFailure = () => {
 
 const newSurveySuccess = (data) => {
   $('#create-survey-form').trigger('reset')
-  $('#show-create-form').removeClass('hidden')
+  $('#survey-form-gateway').removeClass('hidden')
   $('#notification')
     .fadeIn(1)
     .html('question added!')
@@ -83,7 +83,7 @@ const newSurveySuccess = (data) => {
 
 const newSurveyFailure = () => {
   $('#create-survey-form').trigger('reset')
-  $('#show-create-form').removeClass('hidden')
+  $('#survey-form-gateway').removeClass('hidden')
   $('#notification')
     .fadeIn(1)
     .html("question wasn't added. Check your internet connection.")
@@ -173,7 +173,7 @@ const showSurveyStatsFailure = () => {
 
 const showCreateSurveyForm = () => {
   $('#create-survey-form-card').removeClass('hidden')
-  $('#show-create-form').addClass('hidden')
+  $('#survey-form-gateway').addClass('hidden')
 }
 
 module.exports = {
