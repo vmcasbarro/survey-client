@@ -11,12 +11,13 @@
       </div>
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">
-        <button class="btn btn-block btn-outline-dark answer-one" value="yes" type="submit">yes</button>
-      </li>
-      <li class="list-group-item">
-        <button class="btn btn-block btn-outline-dark answer-two" value="no" type="submit">no</button>
-      </li>
+      {{#each survey.answers as |answer|}}
+        {{#if answer}}
+          <li class="list-group-item">
+            <button class="btn btn-block btn-outline-dark answer-two" value="{{answer}}" type="submit">{{answer}}</button>
+          </li>
+        {{/if}}
+      {{/each}}
     </ul>
     <div class="card-body align-self-center">
       <p class="card-text">submitted by <span class="text-secondary">{{survey.author}}</span></p>
