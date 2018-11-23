@@ -92,12 +92,11 @@ const updateSurveySuccess = () => {
   $(`[data-id=${store.surveyId}] > .list-group`).addClass('hidden')
 }
 
-
 const updateSurveyFailure = () => {
   $('#create-survey-form').trigger('reset')
   $('#notification')
     .fadeIn(1)
-    .html("Something went wrong. Check your internet connection.")
+    .html('Something went wrong. Check your internet connection.')
     .css('color', 'red')
     .fadeOut(4000)
 }
@@ -113,14 +112,26 @@ const updateSurveyFailure = () => {
 // }
 
 const showSurveyStatsSuccess = () => {
-  console.log('made it!', store.updatedSurvey)
+  const responses = store.updatedSurvey.responses
+  const yesResponses = responses.filter(function (response) {
+    return response.answer === 'yes'
+  })
+  const noResponses = responses.filter(function (response) {
+    return response.answer === 'no'
+  })
+  console.log('yes: ', yesResponses.length)
+  console.log('no: ', noResponses.length)
+  $(`[data-id=${store.surveyId}] > .survey-stats`).html(
+    `<p>yes: ${yesResponses.length}</p>
+    <p>no: ${noResponses.length}</p>`
+  )
 }
 
 const showSurveyStatsFailure = () => {
   $('#create-survey-form').trigger('reset')
   $('#notification')
     .fadeIn(1)
-    .html("Something went wrong. Check your internet connection.")
+    .html('Something went wrong. Check your internet connection.')
     .css('color', 'red')
     .fadeOut(4000)
 }

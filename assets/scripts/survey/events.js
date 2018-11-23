@@ -42,9 +42,7 @@ const onShowAllSurveysButStay = (event) => {
 const onShowSurvey = () => {
   api.showSurvey(store.surveyId)
     .then((response) => {
-      console.log(response.survey)
       store.updatedSurvey = response.survey
-      console.log(store.updatedSurvey)
     })
     .then(ui.showSurveyStatsSuccess)
     .catch(ui.showSurveyStatsFailure)
