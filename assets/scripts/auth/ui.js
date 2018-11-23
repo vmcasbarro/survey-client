@@ -31,6 +31,7 @@ const signInSuccess = (response) => {
     .fadeOut(4000)
   $('#survey-form-row').removeClass('hidden')
   $('#survey-form-placeholder').addClass('hidden')
+  $('#survey-form-gateway').removeClass('hidden')
 
 
   $('.sign-up-log-in').addClass('hidden')

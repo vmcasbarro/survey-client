@@ -1,3 +1,40 @@
+<div id="create-survey-form-card" class="card m-1 hidden" style="width: 18rem;">
+  <div class="card-header">
+    Add a question!
+  </div>
+  <form id="create-survey-form">
+
+    <div class="card-body">
+      <h5 class="card-title">
+        <input class="form-control mr-sm-2" name="survey[question]" type="text" placeholder="question" aria-label="question" required>
+      </h5>
+      <p class="card-text">
+        <input class="form-control mr-sm-2" name="survey[location]" type="text" placeholder="asked at (location)" aria-label="asked at (location)" required>
+      </p>
+
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <p class="card-text">
+          <input class="form-control mr-sm-2" name="survey[answers[0]]" type="text" placeholder="answer a" aria-label="answer a" required>
+        </p>
+        <p>
+          <input class="form-control mr-sm-2" name="survey[answers[1]]" type="text" placeholder="answer b" aria-label="answer b" required>
+        </p>
+        <p>
+          <input class="form-control mr-sm-2" name="survey[answers[2]]" type="text" placeholder="answer c" aria-label="answer c">
+        </p>
+        <p>
+          <input class="form-control mr-sm-2" name="survey[answers[3]]" type="text" placeholder="answer d" aria-label="answer d">
+        </p>
+      </li>
+    </ul>
+    <div class="card-body align-self-center">
+      <button class="btn btn-block btn-primary my-2 my-sm-0" type="submit">add question</button>
+    </div>
+  </form>
+</div>
+
 
 {{#each surveys as |survey|}}
   <div data-id="{{survey._id}}" class="card m-1" style="width: 18rem;">

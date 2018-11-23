@@ -5,6 +5,7 @@
 
 const authEvents = require('./auth/events.js')
 const surveyEvents = require('./survey/events.js')
+const surveyUI = require('./survey/ui.js')
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
@@ -17,17 +18,14 @@ $(() => {
   $('#sign-out').on('click', authEvents.onSignOut)
 
   // Survey events
-  $('#create-survey-form').on('submit', surveyEvents.onNewSurvey)
+  // $('#create-survey-form').on('submit', surveyEvents.onNewSurvey)
 
   $('#update-survey-form').on('submit', surveyEvents.onUpdateSurvey)
   $('#delete-survey-button').on('submit', surveyEvents.onDestroySurvey)
   $('#show-survey-button').on('submit', surveyEvents.onShowOneSurvey)
   $('#show-all-surveys').on('click', surveyEvents.onShowAllSurveys)
-  // $('#show-all-surveys').on('click', () => {
-  //   $('html, body').animate({
-  //     scrollTop: ($('#see-all-surveys-section').offset().top)
-  //   }, 500)
-  // })
+  $('#show-create-form').on('click', surveyUI.showCreateSurveyForm)
+
 
   // My survey events
   $('#show-my-surveys').on('click', surveyEvents.onShowMySurveys)
@@ -36,4 +34,5 @@ $(() => {
   // Survey Events within Handlebars
   $('#surveys-matrix').on('click', '.answer-one', surveyEvents.onUpdateSurvey)
   $('#surveys-matrix').on('click', '.answer-two', surveyEvents.onUpdateSurvey)
+  $('#surveys-matrix').on('submit', '#create-survey-form', surveyEvents.onNewSurvey)
 })

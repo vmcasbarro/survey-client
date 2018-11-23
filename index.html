@@ -85,16 +85,21 @@
   <!-- create a new survey -->
   <div class="container pt-4">
     <div id="survey-form-placeholder" class="row justify-content-center">
-      <div class="alert alert-primary fade show" role="alert">
+      <div class="alert alert-primary" role="alert">
         Sign in to add a question.
       </div>
     </div>
-    <div id="survey-form-row" class="row justify-content-center pb-2 hidden">
+    <div id="survey-form-gateway" class="row justify-content-center hidden">
+      <div class="col-6">
+        <button id="show-create-form" class="btn btn-block btn-primary my-2 my-sm-0" type="submit">click to add a question!</button>
+      </div>
+    </div>
+    <!-- <div id="survey-form-row" class="row justify-content-center pb-2 hidden">
       <div class="col-md-6">
         <form id="create-survey-form" class="">
           <input class="form-control mr-sm-2" name="survey[question]" type="text" placeholder="question" aria-label="question" required>
           <input class="form-control mr-sm-2" name="survey[location]" type="text" placeholder="asked at (location)" aria-label="asked at (location)" required>
-          <!-- answers -->
+
           <input class="form-control mr-sm-2" name="survey[answers[0]]" type="text" placeholder="answer a" aria-label="answer a" required>
           <input class="form-control mr-sm-2" name="survey[answers[1]]" type="text" placeholder="answer b" aria-label="answer b" required>
           <input class="form-control mr-sm-2" name="survey[answers[2]]" type="text" placeholder="answer c" aria-label="answer c">
@@ -102,7 +107,7 @@
           <button class="btn btn-block btn-primary my-2 my-sm-0" type="submit">add question</button>
         </form>
       </div>
-    </div>
+    </div> -->
   </div>
 
   <!-- user's surveys matrix -->
@@ -137,6 +142,48 @@
   <!-- survey card matrix -->
   <div class="container pt-2 pb-3 mb-5">
     <div id="surveys-matrix" class="row justify-content-center">
+
+      <!-- <div class="card m-1" style="width: 18rem;">
+        <form id="create-survey-form">
+
+          <div class="card-body">
+            <h5 class="card-title">
+              <input class="form-control mr-sm-2" name="survey[question]" type="text" placeholder="question" aria-label="question" required>
+            </h5>
+            <p class="card-text">
+              <input class="form-control mr-sm-2" name="survey[location]" type="text" placeholder="asked at (location)" aria-label="asked at (location)" required>
+            </p>
+
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <input class="form-control mr-sm-2" name="survey[answers[0]]" type="text" placeholder="answer a" aria-label="answer a" required>
+            </li>
+            <li class="list-group-item">
+              <input class="form-control mr-sm-2" name="survey[answers[1]]" type="text" placeholder="answer b" aria-label="answer b" required>
+            </li>
+            <li class="list-group-item">
+              <input class="form-control mr-sm-2" name="survey[answers[2]]" type="text" placeholder="answer c" aria-label="answer c">
+            </li>
+            <li class="list-group-item">
+              <input class="form-control mr-sm-2" name="survey[answers[3]]" type="text" placeholder="answer d" aria-label="answer d">
+            </li>
+          </ul>
+          <div class="card-body align-self-center">
+            <button class="btn btn-block btn-primary my-2 my-sm-0" type="submit">add question</button>
+          </div>
+        </form>
+      </div> -->
+
+        <!-- <input class="form-control mr-sm-2" name="survey[question]" type="text" placeholder="question" aria-label="question" required>
+        <input class="form-control mr-sm-2" name="survey[location]" type="text" placeholder="asked at (location)" aria-label="asked at (location)" required>
+
+        <input class="form-control mr-sm-2" name="survey[answers[0]]" type="text" placeholder="answer a" aria-label="answer a" required>
+        <input class="form-control mr-sm-2" name="survey[answers[1]]" type="text" placeholder="answer b" aria-label="answer b" required>
+        <input class="form-control mr-sm-2" name="survey[answers[2]]" type="text" placeholder="answer c" aria-label="answer c">
+        <input class="form-control mr-sm-2" name="survey[answers[3]]" type="text" placeholder="answer d" aria-label="answer d">
+        <button class="btn btn-block btn-primary my-2 my-sm-0" type="submit">add question</button>
+      </form> -->
 
       <div class="card m-1" style="width: 18rem;">
         <div class="card-body">
