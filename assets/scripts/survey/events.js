@@ -3,6 +3,7 @@
 const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
+const store = require('../store.js')
 
 const onNewSurvey = (event) => {
   event.preventDefault()
@@ -27,19 +28,31 @@ const onShowAllSurveysButStay = (event) => {
     .catch(ui.showAllSurveysFailure)
 }
 
-const onShowOneSurvey = (event) => {
-  event.preventDefault()
-  const surveyData = getFormFields(event.target)
-  api.showOneSurvey(surveyData)
-    .then(ui.showOneSurveySuccess)
-    .catch(ui.showOneSurveyFailure)
+// const onShowSurvey = () => {
+//   api.showSurvey(store.surveyId)
+//     .then((response) => {
+//       console.log(response.survey)
+//       store.updatedSurvey = response.survey
+//       console.log(store.updatedSurvey)
+//     }
+
+      // .then(ui.showOneSurveySuccess)
+      // .catch(ui.showOneSurveyFailure)
+
+const onShowSurvey = () => {
+  api.showSurvey(store.surveyId)
+    .then((response) => {
+      console.log(response.survey)
+      store.updatedSurvey = response.survey
+      console.log(store.updatedSurvey)
+    })
 }
 
 const onUpdateSurvey = (event) => {
   event.preventDefault()
   const parents = $(event.target).parents('div')
   const surveyId = parents[0].dataset.id
-  // const surveyId = event.target['dataset.id']
+  store.surveyId = surveyId
 
   const surveyData = {
     survey: {
@@ -47,7 +60,9 @@ const onUpdateSurvey = (event) => {
     }
   }
   api.updateSurvey(surveyData, surveyId)
-    .then(() => ui.updateSurveySuccess(surveyId))
+    // get the survey that was just updated
+    .then(onShowSurvey)
+    .then(ui.updateSurveySuccess)
     // .then(onShowAllSurveys)
     .catch(ui.updateSurveyFailure)
 }
@@ -76,7 +91,7 @@ const onShowMySurveys = (event) => {
 module.exports = {
   onNewSurvey,
   onShowAllSurveys,
-  onShowOneSurvey,
+  onShowSurvey,
   onUpdateSurvey,
   onConfirmDeleteSurvey,
   onShowMySurveys

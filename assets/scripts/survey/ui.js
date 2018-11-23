@@ -87,10 +87,9 @@ const newSurveyFailure = () => {
     .fadeOut(4000)
 }
 
-const updateSurveySuccess = (data) => {
-  console.log('data', data)
-  $(`[data-id=${data}] > .survey-stats`).removeClass('hidden')
-  $(`[data-id=${data}] > .list-group`).addClass('hidden')
+const updateSurveySuccess = () => {
+  $(`[data-id=${store.surveyId}] > .survey-stats`).removeClass('hidden')
+  $(`[data-id=${store.surveyId}] > .list-group`).addClass('hidden')
 }
 
 const updateSurveyFailure = () => {

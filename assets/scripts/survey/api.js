@@ -24,8 +24,14 @@ const showAllSurveys = () => {
   })
 }
 
-const showOneSurvey = (surveyData) => {
-
+const showSurvey = (surveyId) => {
+  return $.ajax({
+    url: config.apiUrl + `/surveys/${surveyId}`,
+    method: 'GET',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    }
+  })
 }
 
 const updateSurvey = (surveyData, surveyId) => {
@@ -53,7 +59,7 @@ const deleteSurvey = (surveyId) => {
 module.exports = {
   newSurvey,
   showAllSurveys,
-  showOneSurvey,
+  showSurvey,
   updateSurvey,
   deleteSurvey
 }
