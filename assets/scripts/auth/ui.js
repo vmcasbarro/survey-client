@@ -32,18 +32,6 @@ const signInSuccess = (response) => {
   $('#survey-form-row').removeClass('hidden')
   $('#survey-form-placeholder').addClass('hidden')
   $('#survey-form-gateway').removeClass('hidden')
-
-
-  $('.sign-up-log-in').addClass('hidden')
-
-  $('.navbar').removeClass('hidden')
-  $('.home-menu').removeClass('hidden')
-  $('.change-password-section').removeClass('hidden')
-  $('#create-survey-section').removeClass('hidden')
-  $('.see-all-surveys-section').removeClass('hidden')
-  $('.see-my-surveys-section').removeClass('hidden')
-  $('#display-sign-up-message').html('')
-
   surveyEvents.onShowAllSurveys()
 }
 
@@ -79,13 +67,6 @@ const signOutSuccess = () => {
   $('#survey-form-placeholder').removeClass('hidden')
   $('#survey-form-gateway').addClass('hidden')
   $('#create-survey-form-card').addClass('hidden')
-
-  // either hide these using a wrapper *or* come up with a better way to display log-in screen
-  $('.home-menu').addClass('hidden')
-  $('.change-password-section').addClass('hidden')
-  $('#create-survey-section').addClass('hidden')
-  $('.see-all-surveys-section').addClass('hidden')
-  $('.see-my-surveys-section').addClass('hidden')
 }
 
 const signOutFailure = () => {
