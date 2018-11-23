@@ -86,7 +86,7 @@
   <div class="container pt-4">
     <div id="survey-form-placeholder" class="row justify-content-center">
       <div class="alert alert-primary" role="alert">
-        Sign in to add a question.
+        Sign in to see questions and log your own!
       </div>
     </div>
     <div id="survey-form-gateway" class="row justify-content-center hidden">
@@ -124,114 +124,58 @@
     </div>
   </div>
 
+  <div class="container pt-2 pb-3 mb-5">
+    <div id="demo-surveys-matrix" class="row justify-content-center">
+
+            <div class="card m-1" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">Who was the 5th president of the United States?</h5>
+                <p class="card-text">Asked at: The Thirsty Scholar</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <button id="button-a" class="btn btn-block btn-outline-dark" type="submit">George Washington</button>
+                </li>
+                <li class="list-group-item">
+                  <button id="button-b" class="btn btn-block btn-outline-dark" type="submit">Theodore Roosevelt</button>
+                </li>
+                <li class="list-group-item">
+                  <button id="button-c" class="btn btn-block btn-outline-dark" type="submit">James Monroe</button>
+                </li>
+                <li class="list-group-item">
+                  <button id="button-d" class="btn btn-block btn-outline-dark" type="submit">John Quincy Adams</button>
+                </li>
+              </ul>
+              <div class="card-body align-self-center">
+                <p class="card-text">Submitted by Vince</p>
+              </div>
+            </div>
+
+            <div class="card m-1" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">Who was the 5th president of the United States?</h5>
+                <p class="card-text">Asked at: The Thirsty Scholar</p>
+              </div>
+              <div class="card-body survey-stats pb-0">
+                <!-- <div class="chart-container" style="height:300px; width:246px"> -->
+                  <canvas id="demo-chart" width="400" height="400"></canvas>
+                <!-- </div> -->
+              </div>
+              <div class="card-body align-self-center">
+                <p class="card-text">Submitted by Vince</p>
+              </div>
+            </div>
+
+
+
+    </div>
+
+  </div>
+
 
   <!-- survey card matrix -->
   <div class="container pt-2 pb-3 mb-5">
     <div id="surveys-matrix" class="row justify-content-center">
-
-      <div class="card m-1" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">How long does it take light from the Sun to reach Earth?</h5>
-          <p class="card-text">Asked at: The Thirsty Scholar</p>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <button class="btn btn-block btn-outline-dark" type="submit">Answer A</button>
-          </li>
-          <li class="list-group-item">
-            <button class="btn btn-block btn-outline-dark" type="submit">Answer B</button>
-          </li>
-          <li class="list-group-item">
-            <button class="btn btn-block btn-outline-dark" type="submit">Answer C</button>
-
-          </li>
-        </ul>
-        <div class="card-body align-self-center">
-          <p class="card-text">Submitted by jasper</p>
-        </div>
-      </div>
-
-      <div class="card m-1" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Cras justo odio</li>
-          <li class="list-group-item">Dapibus ac facilisis in</li>
-          <li class="list-group-item">Vestibulum at eros</li>
-        </ul>
-        <div class="card-body">
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
-        </div>
-      </div>
-
-      <div class="card m-1" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Cras justo odio</li>
-          <li class="list-group-item">Dapibus ac facilisis in</li>
-          <li class="list-group-item">Vestibulum at eros</li>
-        </ul>
-        <div class="card-body">
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
-        </div>
-      </div>
-
-      <div class="card m-1" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Cras justo odio</li>
-          <li class="list-group-item">Dapibus ac facilisis in</li>
-          <li class="list-group-item">Vestibulum at eros</li>
-        </ul>
-        <div class="card-body">
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
-        </div>
-      </div>
-
-      <div class="card m-1" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Cras justo odio</li>
-          <li class="list-group-item">Dapibus ac facilisis in</li>
-          <li class="list-group-item">Vestibulum at eros</li>
-        </ul>
-        <div class="card-body">
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
-        </div>
-      </div>
-
-      <div class="card m-1" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Cras justo odio</li>
-          <li class="list-group-item">Dapibus ac facilisis in</li>
-          <li class="list-group-item">Vestibulum at eros</li>
-        </ul>
-        <div class="card-body">
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
-        </div>
-      </div>
-
-
     </div>
   </div>
 

@@ -32,6 +32,7 @@ const signInSuccess = (response) => {
   $('#survey-form-row').removeClass('hidden')
   $('#survey-form-placeholder').addClass('hidden')
   $('#survey-form-gateway').removeClass('hidden')
+  $('#demo-surveys-matrix').addClass('hidden')
   surveyEvents.onShowAllSurveys()
 }
 
@@ -67,6 +68,9 @@ const signOutSuccess = () => {
   $('#survey-form-placeholder').removeClass('hidden')
   $('#survey-form-gateway').addClass('hidden')
   $('#create-survey-form-card').addClass('hidden')
+  $('#demo-surveys-matrix').removeClass('hidden')
+  $('#surveys-matrix').addClass('hidden')
+
 }
 
 const signOutFailure = () => {
