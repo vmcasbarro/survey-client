@@ -115,29 +115,44 @@ const updateSurveyFailure = () => {
 
 const showSurveyStatsSuccess = () => {
   const responses = store.updatedSurvey.responses
-  const yesResponses = responses.filter(function (response) {
-    return response.answer === 'yes'
+
+  // get only answers that have values
+  const labels = store.updatedSurvey.answers.filter(function (answer) {
+    return answer !== ''
   })
-  const noResponses = responses.filter(function (response) {
-    return response.answer === 'no'
+
+  const aResponses = responses.filter(function (response) {
+    return response.answer === labels[0]
+  })
+  const bResponses = responses.filter(function (response) {
+    return response.answer === labels[1]
+  })
+  const cResponses = responses.filter(function (response) {
+    return response.answer === labels[2]
+  })
+  const dResponses = responses.filter(function (response) {
+    return response.answer === labels[3]
   })
 
   var ctx = $(`[data-id=${store.surveyId}]`).find("canvas")
-  console.log(ctx)
-  var myChart = new Chart(ctx, {
+  let myChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
-        labels: ['yes', 'no'],
+        labels: labels,
         datasets: [{
             label: 'responses',
-            data: [yesResponses.length, noResponses.length],
+            data: [aResponses.length, bResponses.length, cResponses.length, dResponses.length],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)'
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)'
             ],
             borderColor: [
                 'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)'
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)'
             ],
             borderWidth: 1
         }]
