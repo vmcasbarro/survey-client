@@ -92,8 +92,13 @@
     <div id="survey-form-row" class="row justify-content-center pb-2 hidden">
       <div class="col-md-6">
         <form id="create-survey-form" class="">
-          <input class="form-control mr-sm-2" name="survey[question]" type="text" placeholder="question" aria-label="question">
-          <input class="form-control mr-sm-2" name="survey[location]" type="text" placeholder="asked at" aria-label="asked at">
+          <input class="form-control mr-sm-2" name="survey[question]" type="text" placeholder="question" aria-label="question" required>
+          <input class="form-control mr-sm-2" name="survey[location]" type="text" placeholder="asked at (location)" aria-label="asked at (location)" required>
+          <!-- answers -->
+          <input class="form-control mr-sm-2" name="survey[answers[0]]" type="text" placeholder="answer a" aria-label="answer a" required>
+          <input class="form-control mr-sm-2" name="survey[answers[1]]" type="text" placeholder="answer b" aria-label="answer b" required>
+          <input class="form-control mr-sm-2" name="survey[answers[2]]" type="text" placeholder="answer c" aria-label="answer c">
+          <input class="form-control mr-sm-2" name="survey[answers[3]]" type="text" placeholder="answer d" aria-label="answer d">
           <button class="btn btn-block btn-primary my-2 my-sm-0" type="submit">add question</button>
         </form>
       </div>
