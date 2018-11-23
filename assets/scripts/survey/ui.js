@@ -125,7 +125,7 @@ const showSurveyStatsSuccess = () => {
   var ctx = $(`[data-id=${store.surveyId}]`).find("canvas")
   console.log(ctx)
   var myChart = new Chart(ctx, {
-    type: 'bar',
+    type: 'doughnut',
     data: {
         labels: ['yes', 'no'],
         datasets: [{
@@ -142,15 +142,6 @@ const showSurveyStatsSuccess = () => {
             borderWidth: 1
         }]
     },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:true
-                }
-            }]
-        }
-    }
 });
 }
 
