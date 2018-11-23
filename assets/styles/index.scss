@@ -1,4 +1,8 @@
 @import '~bootstrap/scss/bootstrap';
+@font-face {
+  font-family: 'La Patio';
+  src: url('public/La_Patio_Script.otf') format('truetype');
+}
 
 .hidden {
   display: none;
@@ -7,4 +11,116 @@
 .the-chart {
   height: 100px;
   width: 100px;
+}
+
+body {
+  background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7) ), url('../../public/bar-bottles.jpg');
+
+  /* Full height */
+  height: 100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#create-survey-form-card {
+  h5 {
+    font-family: 'La Patio';
+    font-size: 2.5em;
+    padding: 0;
+    margin-top: -8px;
+    margin-bottom: -12px;
+    text-align: center;
+  }
+}
+
+nav {
+  #brand {
+    font-family: 'La Patio';
+    font-size: 2.5em;
+    height: 40px;
+    color: #fbc251;
+    padding: 0;
+    margin-top: -12px;
+  }
+  a {
+    color: #fdc52e;
+    &:hover {
+        color: #f4101b;
+      }
+  }
+}
+
+#create-survey-form-card {
+  form {
+    background-color: rgba(01, 00, 06, 0);
+    &:hover {
+      background-color: rgba(01, 00, 06, 0);
+    }
+  }
+
+  input {
+    background-color: rgba(01, 00, 06, 0);
+    &:focus {
+      background-color: rgba(01, 00, 06, 0);
+    }
+  }
+}
+
+.dropdown-menu {
+  background-color: rgba(01, 00, 06, 0.8);
+  &:hover {
+    background-color: rgba(01, 00, 06, 0.8);
+  }
+  form {
+    background-color: rgba(01, 00, 06, 0);
+    &:hover {
+      background-color: rgba(01, 00, 06, 0);
+    }
+  }
+  input {
+    background-color: rgba(01, 00, 06, 0);
+    &:focus {
+      background-color: rgba(01, 00, 06, 0);
+    }
+  }
+}
+
+.fixed-bottom {
+  padding: 0;
+  span {
+    padding: 2px;
+  }
+}
+
+.card {
+  color: #feeecd;
+  border-color: #e3a702;
+  background-color: rgba(01, 00, 06, 0.8);
+  ul {
+    // background: #010006;
+    li {
+      background-color: rgba(01, 00, 06, 0);
+      border-color: #e3a702;
+    }
+  }
+  .btn-outline-light {
+    background-color: rgba(01, 00, 06, 0.8);
+    color: #aa0a13;
+    border-color: #aa0a13;
+    &:hover {
+      background-color: rgba(01, 00, 06, 0.8);
+      color: #e3a702;
+      border-color: #e3a702;
+    }
+  }
+}
+
+.alert-primary {
+  background-color: rgba(01, 00, 06, 0.8);
+  color: #e3a702;
+  border-color: #e3a702;
 }

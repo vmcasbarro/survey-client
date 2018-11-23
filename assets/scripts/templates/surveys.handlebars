@@ -1,13 +1,13 @@
 <div id="create-survey-form-card" class="card m-1 hidden" style="width: 18rem;">
-  <div class="card-header">
-    Add a question!
+  <div class="card-header justify-content-center">
+    <h5>Add a question.</h5>
   </div>
   <form id="create-survey-form">
 
     <div class="card-body">
-      <h5 class="card-title">
+      <p class="card-title">
         <input class="form-control mr-sm-2" name="survey[question]" type="text" placeholder="question" aria-label="question" required>
-      </h5>
+      </p>
       <p class="card-text">
         <input class="form-control mr-sm-2" name="survey[location]" type="text" placeholder="asked at (location)" aria-label="asked at (location)" required>
       </p>
@@ -49,7 +49,7 @@
       {{#each survey.answers as |answer|}}
         {{#if answer}}
           <li class="list-group-item">
-            <button class="btn btn-block btn-outline-dark answer-two" value="{{answer}}" type="submit">{{answer}}</button>
+            <button class="btn btn-block btn-outline-light answer-two" value="{{answer}}" type="submit">{{answer}}</button>
           </li>
         {{/if}}
       {{/each}}

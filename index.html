@@ -17,8 +17,8 @@
 
   <!-- NAV BAR -->
 
-  <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Anything but Trivial</a>
+  <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: #010006;">
+    <a id="brand" class="navbar-brand" href="#">Anything but Trivial</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -26,7 +26,6 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
       </ul>
       <div id="notification" class="">
@@ -42,7 +41,7 @@
             <input class="form-control mr-sm-2" name="credentials[email]" type="text" placeholder="email" aria-label="email">
             <input class="form-control mr-sm-2" name="credentials[password]" type="password" placeholder="password" aria-label="password">
             <input class="form-control mr-sm-2" name="credentials[password_confirmation]" type="password" placeholder="confirm password" aria-label="confirm password">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">sign up</button>
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">sign up</button>
           </form>
         </div>
       </div>
@@ -56,7 +55,7 @@
           <form id="sign-in-form" class="dropdown-item">
             <input class="form-control mr-sm-2" name="credentials[email]" type="text" placeholder="email" aria-label="email">
             <input class="form-control mr-sm-2" name="credentials[password]" type="password" placeholder="password" aria-label="password">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">sign in</button>
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">sign in</button>
           </form>
         </div>
       </div>
@@ -86,12 +85,12 @@
   <div class="container pt-4">
     <div id="survey-form-placeholder" class="row justify-content-center">
       <div class="alert alert-primary" role="alert">
-        Sign in to see questions and log your own!
+        Sign in to see all questions and log your own.
       </div>
     </div>
     <div id="survey-form-gateway" class="row justify-content-center hidden">
       <div class="col-6">
-        <button id="create-form-shower" class="btn btn-block btn-primary my-2 my-sm-0" type="submit">click to add a question!</button>
+        <button id="create-form-shower" class="btn btn-block btn-dark my-2 my-sm-0" type="submit">add a question</button>
       </div>
     </div>
   </div>
@@ -124,6 +123,7 @@
     </div>
   </div>
 
+  <!-- demo -->
   <div class="container pt-2 pb-3 mb-5">
     <div id="demo-surveys-matrix" class="row justify-content-center">
 
@@ -134,16 +134,16 @@
               </div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                  <button id="button-a" class="btn btn-block btn-outline-dark" type="submit">George Washington</button>
+                  <button id="button-a" class="btn btn-block btn-outline-light" type="submit">George Washington</button>
                 </li>
                 <li class="list-group-item">
-                  <button id="button-b" class="btn btn-block btn-outline-dark" type="submit">Theodore Roosevelt</button>
+                  <button id="button-b" class="btn btn-block btn-outline-light" type="submit">Theodore Roosevelt</button>
                 </li>
                 <li class="list-group-item">
-                  <button id="button-c" class="btn btn-block btn-outline-dark" type="submit">James Monroe</button>
+                  <button id="button-c" class="btn btn-block btn-outline-light" type="submit">James Monroe</button>
                 </li>
                 <li class="list-group-item">
-                  <button id="button-d" class="btn btn-block btn-outline-dark" type="submit">John Quincy Adams</button>
+                  <button id="button-d" class="btn btn-block btn-outline-light" type="submit">John Quincy Adams</button>
                 </li>
               </ul>
               <div class="card-body align-self-center">
@@ -180,9 +180,9 @@
   </div>
 
   <!-- footer -->
-  <nav class="navbar fixed-bottom navbar-light bg-light pt-1">
+  <nav class="navbar fixed-bottom npt-1 navbar-dark" style="background-color: #010006; color: #fdc52e;">
     <a class="navbar-brand" href="#"></a>
-    <span class="navbar-text font-weight-light text-dark">
+    <span class="navbar-text font-weight-light">
       Designed and coded with ❤️ by <a href="#">Vince Casbarro</a>
     </span>
   </nav>
