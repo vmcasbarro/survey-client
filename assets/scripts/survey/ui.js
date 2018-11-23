@@ -121,12 +121,6 @@ const showSurveyStatsSuccess = () => {
   const noResponses = responses.filter(function (response) {
     return response.answer === 'no'
   })
-  // $(`[data-id=${store.surveyId}] > .survey-stats`).html(
-  //   `<p>yes: ${yesResponses.length}</p>
-  //   <p>no: ${noResponses.length}</p>`
-  // )
-
-  console.log($(`[data-id=${store.surveyId}]`).find('.chart-container'))
 
   var ctx = $(`[data-id=${store.surveyId}]`).find("canvas")
   console.log(ctx)
