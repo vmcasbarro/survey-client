@@ -15,29 +15,10 @@ const onNewSurvey = (event) => {
 }
 
 const onShowAllSurveys = (event) => {
-  // event.preventDefault()
   api.showAllSurveys()
     .then(ui.showAllSurveysSuccess)
     .catch(ui.showAllSurveysFailure)
 }
-
-const onShowAllSurveysButStay = (event) => {
-  // event.preventDefault()
-  api.showAllSurveys()
-    .then(ui.showAllSurveysSuccessButStay)
-    .catch(ui.showAllSurveysFailure)
-}
-
-// const onShowSurvey = () => {
-//   api.showSurvey(store.surveyId)
-//     .then((response) => {
-//       console.log(response.survey)
-//       store.updatedSurvey = response.survey
-//       console.log(store.updatedSurvey)
-//     }
-
-      // .then(ui.showOneSurveySuccess)
-      // .catch(ui.showOneSurveyFailure)
 
 const onShowSurvey = () => {
   api.showSurvey(store.surveyId)

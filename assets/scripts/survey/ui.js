@@ -4,8 +4,6 @@ import Chart from 'chart.js'
 
 const store = require('../store.js')
 const showSurveysTemplate = require('../templates/surveys.handlebars')
-const showMySurveysTemplate = require('../templates/my-surveys.handlebars')
-const authUi = require('../auth/ui.js')
 
 const showAllSurveysSuccess = (data) => {
   const allSurveys = data
@@ -23,44 +21,6 @@ const showAllSurveysSuccess = (data) => {
 
   $('#surveys-matrix').html(showSurveysHtml)
 }
-
-// const showAllSurveysSuccessButStay = (data) => {
-//   const allSurveys = data
-//   const userId = store.user._id
-//
-//   const allMySurveys = allSurveys.surveys.filter(function (survey) {
-//     return survey.owner === userId
-//   })
-//
-//   store.mySurveys = allMySurveys
-//
-//   $('.reset').trigger('reset')
-//   const showSurveysHtml = showSurveysTemplate({
-//     surveys: data.surveys
-//   })
-//
-//   $('.my-surveys-component').addClass('hidden')
-//   $('.survey-component').removeClass('hidden')
-//   $('.survey-component').html(showSurveysHtml)
-//
-//   // $('#display-survey-message').html('All surveys shown')
-//   $('#display-survey-message').css('black')
-// }
-
-
-// const showMySurveys = () => {
-//   const showMySurveysHtml = showMySurveysTemplate({
-//     surveys: store.mySurveys
-//   })
-//   $('.my-surveys-component').removeClass('hidden')
-//   $('.survey-component').addClass('hidden')
-//   $('.my-surveys-component').html(showMySurveysHtml)
-//   //$('#display-survey-message').html('User created surveys shown')
-//   $('#display-survey-message').css('black')
-//   $('html, body').animate({
-//     scrollTop: ($('#see-my-surveys-section').offset().top)
-//   }, 500)
-// }
 
 const showAllSurveysFailure = () => {
   $('#create-survey-form').trigger('reset')
@@ -104,16 +64,6 @@ const updateSurveyFailure = () => {
     .css('color', 'red')
     .fadeOut(4000)
 }
-
-// const deleteSurveySuccess = () => {
-//   $('.reset').trigger('reset')
-//   // $('#display-survey-message').html('Survey removed')
-//   // $('#display-survey-message').css('green')
-// }
-//
-// const deleteSurveyFailure = () => {
-//   $('.reset').trigger('reset')
-// }
 
 const showSurveyStatsSuccess = () => {
   const responses = store.updatedSurvey.responses
@@ -188,7 +138,4 @@ module.exports = {
   showSurveyStatsSuccess,
   showSurveyStatsFailure,
   showCreateSurveyForm
-  // deleteSurveySuccess,
-  // deleteSurveyFailure,
-  // showAllSurveysSuccessButStay
 }

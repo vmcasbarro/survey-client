@@ -35,7 +35,6 @@ const showSurvey = (surveyId) => {
 }
 
 const updateSurvey = (surveyData, surveyId) => {
-  // const surveyId = surveyData.survey._id
   return $.ajax({
     url: config.apiUrl + `/surveys/${surveyId}`,
     method: 'PATCH',
