@@ -50,6 +50,10 @@ nav {
     color: #fbc251;
     padding: 0;
     margin-top: -12px;
+    &:hover {
+      text-shadow: 0 0 10px #f4101b;
+      background-color: rgba(01, 00, 06, .95);
+    }
   }
   a {
     color: #fdc52e;
