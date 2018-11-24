@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Anything but Trivial</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+
+  <!-- NAV BAR -->
+
+  <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: #010006;">
+    <a id="brand" class="navbar-brand" href="#">Anything but Trivial</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+        </li>
+      </ul>
+      <div id="notification" class="">
+      </div>
+
+      <!-- SIGN UP -->
+      <div class="nav-item dropdown sign-up-and-in">
+        <a class="nav-link dropdown-toggle" href="#" id="sign-up-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          sign up
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="sign-up-dropdown">
+          <form id="sign-up-form" class="dropdown-item">
+            <input class="form-control mr-sm-2" name="credentials[email]" type="text" placeholder="email" aria-label="email">
+            <input class="form-control mr-sm-2" name="credentials[password]" type="password" placeholder="password" aria-label="password">
+            <input class="form-control mr-sm-2" name="credentials[password_confirmation]" type="password" placeholder="confirm password" aria-label="confirm password">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">sign up</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- SIGN IN -->
+      <div class="nav-item dropdown sign-up-and-in">
+        <a class="nav-link dropdown-toggle" href="#" id="sign-in-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          sign in
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="sign-in-dropdown">
+          <form id="sign-in-form" class="dropdown-item">
+            <input class="form-control mr-sm-2" name="credentials[email]" type="text" placeholder="email" aria-label="email">
+            <input class="form-control mr-sm-2" name="credentials[password]" type="password" placeholder="password" aria-label="password">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">sign in</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- hidden until successful log in -->
+
+      <!-- CHANGE PASSWORD -->
+      <div class="nav-item dropdown change-pwd-and-log-out hidden">
+        <a class="nav-link dropdown-toggle" href="#" id="change-password-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          change password
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="change-password-dropdown">
+          <form id="change-password-form" class="dropdown-item">
+            <input class="form-control mr-sm-2" name="passwords[old]" type="password" placeholder="old" aria-label="old">
+            <input class="form-control mr-sm-2" name="passwords[new]" type="password" placeholder="new" aria-label="new">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">change password</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- SIGN OUT -->
+      <button id="sign-out" class="btn btn-outline-secondary my-2 my-sm-0 change-pwd-and-log-out hidden" type="submit">sign out</button>
+    </div>
+  </nav>
+
+  <!-- create a new survey -->
+  <div class="container pt-4">
+    <div id="survey-form-placeholder" class="row justify-content-center">
+      <div class="alert alert-primary" role="alert">
+        Sign in to see all questions and log your own.
+
+        <!-- TODO TOOLTIP: work in progress -->
+
+        <!-- <span class=tooltips>(Learn more)
+          <span class="tooltiptext">
+            Anything but Trivial is designed to log interesting and challenging bar trivia questions, and allow others to answer them! After signing in, you can view all questions in the database, answer questions, or submit your own.
+          </span>
+        </span> -->
+
+      </div>
+    </div>
+    <div id="survey-form-gateway" class="row justify-content-center hidden">
+      <div class="col-md-6">
+        <button id="create-form-shower" class="btn btn-block btn-dark my-2 my-sm-0" type="submit">add a question</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- user's surveys matrix -->
+  <div class="container py-3 hidden">
+    <div class="row justify-content-center">
+
+      <div class="card m-1" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">How long does it take light from the Sun to reach Earth?</h5>
+          <p class="card-text">Asked at: The Thirsty Scholar</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <button class="btn btn-block btn-outline-dark" type="submit">Answer A</button>
+          </li>
+          <li class="list-group-item">
+            <button class="btn btn-block btn-outline-dark" type="submit">Answer B</button>
+          </li>
+          <li class="list-group-item">
+            <button class="btn btn-block btn-outline-dark" type="submit">Answer C</button>
+
+          </li>
+        </ul>
+        <div class="card-body align-self-center">
+          <p class="card-text">Submitted by jasper</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- demo -->
+  <div id="demo-container" class="container pt-2 pb-3 mb-5">
+    <div id="demo-surveys-matrix" class="row justify-content-center">
+
+            <div class="card m-1" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">Who was the 5th president of the United States?</h5>
+                <p class="card-text">Asked at: The Thirsty Scholar</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <button id="button-a" class="btn btn-block btn-outline-light" type="submit">George Washington</button>
+                </li>
+                <li class="list-group-item">
+                  <button id="button-b" class="btn btn-block btn-outline-light" type="submit">Theodore Roosevelt</button>
+                </li>
+                <li class="list-group-item">
+                  <button id="button-c" class="btn btn-block btn-outline-light" type="submit">James Monroe</button>
+                </li>
+                <li class="list-group-item">
+                  <button id="button-d" class="btn btn-block btn-outline-light" type="submit">John Quincy Adams</button>
+                </li>
+              </ul>
+              <div class="card-body align-self-center">
+                <p class="card-text text-secondary">Submitted by jasper</p>
+              </div>
+            </div>
+
+            <div class="card m-1" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">Who was the 5th president of the United States?</h5>
+                <p class="card-text">Asked at: The Thirsty Scholar</p>
+              </div>
+              <div class="card-body survey-stats pb-0">
+                <!-- <div class="chart-container" style="height:300px; width:246px"> -->
+                  <canvas id="demo-chart" width="400" height="400"></canvas>
+                <!-- </div> -->
+              </div>
+              <div class="card-body align-self-center">
+                <p class="card-text text-secondary">Submitted by jasper</p>
+              </div>
+            </div>
+
+
+
+    </div>
+
+  </div>
+
+
+  <!-- survey card matrix -->
+  <div class="container pt-4 pb-3 mb-5">
+    <div id="surveys-matrix" class="row justify-content-center">
+    </div>
+  </div>
+
+  <!-- footer -->
+  <nav class="navbar fixed-bottom npt-1 navbar-dark" style="background-color: #010006; color: #fdc52e;">
+    <a class="navbar-brand" href="#"></a>
+    <span class="navbar-text font-weight-light">
+      Designed and coded with ❤️ by <a href="https://www.linkedin.com/in/vmcasbarro/">Vince Casbarro</a>
+    </span>
+  </nav>
+
+</body>
+
+</html>
