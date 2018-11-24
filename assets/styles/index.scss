@@ -129,3 +129,17 @@ nav {
   color: #e3a702;
   border-color: #e3a702;
 }
+
+#create-form-shower {
+  background-color: rgba(01, 00, 06, 0.8);
+  font-family: 'La Patio';
+  font-size: 2.5em;
+  height: 50px;
+  color: #fbc251;
+  padding: 0;
+  margin-top: -20px;
+  &:hover {
+    text-shadow: 0 0 3px #f4101b;
+    background-color: rgba(01, 00, 06, .95);
+  }
+}
